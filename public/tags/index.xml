@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tags on Digitale Transformatie met AI</title>
+    <link>http://localhost:1313/tags/</link>
+    <description>Recent content in Tags on Digitale Transformatie met AI</description>
+    <generator>Hugo -- 0.147.6</generator>
+    <language>nl-nl</language>
+    <lastBuildDate>Fri, 06 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI</title>
+      <link>http://localhost:1313/tags/ai/</link>
+      <pubDate>Fri, 06 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/ai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>MKB</title>
+      <link>http://localhost:1313/tags/mkb/</link>
+      <pubDate>Fri, 06 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/mkb/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Uitleg</title>
+      <link>http://localhost:1313/tags/uitleg/</link>
+      <pubDate>Fri, 06 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/uitleg/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
