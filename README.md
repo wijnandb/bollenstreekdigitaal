@@ -1,2 +1,2 @@
 # bollenstreekdigitaal
-Help ondernemers succesvoller en gelukkiger te zijn door hte gebruik van AI en automatisering
+Help ondernemers succesvoller en gelukkiger te zijn door het gebruik van AI en automatisering
