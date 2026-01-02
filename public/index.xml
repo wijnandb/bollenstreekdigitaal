@@ -44,14 +44,11 @@
 &lt;p&gt;Ben je dienstverlener of leverancier in tech/AI? Laten we samenwerken.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Over mij</title>
+      <title>Over ons</title>
       <link>http://localhost:1313/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/about/</guid>
-      <description>&lt;p&gt;Ik ben [jouw naam], ondernemer en adviseur.&lt;/p&gt;
-&lt;p&gt;Ik help MKB-bedrijven om technologie niet als bedreiging, maar als kans te zien.&lt;br&gt;
-Mijn kracht zit in &lt;strong&gt;complexe technologie begrijpelijk maken&lt;/strong&gt; en &lt;strong&gt;snelle resultaten boeken&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Met jaren ervaring in startups, webtechnologie en AI laat ik zien wat &lt;em&gt;wél werkt&lt;/em&gt;.&lt;/p&gt;</description>
+      <description></description>
     </item>
   </channel>
 </rss>
