@@ -1,74 +1,66 @@
-
 ---
-title: "bollenstreek digitaal"
-description: "ai begrijpen voordat je erin investeert"
-draft: false
+title: "Digitale Transformatie met AI"
 ---
 
-## AI begrijpen voordat je erin investeert
+# Minder tijdverlies. Meer rust. Slimmere processen.
 
-Veel ondernemers voelen dat ze *iets* moeten met AI.  
-Tegelijkertijd is het onduidelijk waar te beginnen, wat zinvol is en wat vooral ruis is.
+Ik help ondernemers in de Duin- en Bollenstreek om knelpunten in hun werk zichtbaar te maken en slimmer op te lossen. Zonder gedoe, met resultaat.
 
-Je hoeft geen expert te worden.  
-Je hoeft ook niet meteen tools te kopen of processen om te gooien.
-
-Wat je nodig hebt, is overzicht.
+[Plan een vrijblijvende kennismaking](/contact/)
 
 ---
 
-## wat ik doe
+## Voor wie
 
-Ik help mkb-ondernemers om helder te krijgen **waar AI kan helpen — en waar niet**.
+- Ondernemers in de Duin- en Bollenstreek
+- Bedrijven zonder eigen techafdeling
+- Iedereen die merkt dat werk onnodig veel tijd kost
 
-Niet door meteen oplossingen te verkopen,  
-maar door eerst te begrijpen hoe jouw bedrijf werkt:
+## Wat je krijgt
 
-- waar tijd en geld verloren gaan  
-- waar herhaling en frictie zit  
-- waar beslissingen nu op gevoel worden genomen  
+- Een helder beeld van waar tijd en energie weglekken
+- Concrete verbeterpunten (proces, automatisering of tools)
+- Een praktische aanpak die past bij jouw bedrijf
 
-Op basis daarvan krijg je inzicht in:
-- concrete kansen
-- risico’s en randvoorwaarden
-- logische vervolgstappen, in jouw tempo
+## Hoe ik werk
 
----
+1. Kennismaking (vrijblijvend)
+2. Knelpunten in kaart brengen
+3. Meest kansrijke verbeteringen kiezen
+4. Kort experiment of directe oplossing
+5. Evalueren en opschalen
 
-## hoe dat eruitziet
+## Waarom dit werkt
 
-1. **verkennend gesprek**  
-   om te bepalen of AI hier überhaupt iets kan betekenen
+Je hoeft geen grote transformatie. Je hebt rust en overzicht nodig. We kiezen kleine, slimme stappen die snel effect geven, en bouwen alleen door als het echt waarde toevoegt.
 
-2. **analyse & advies**  
-   gesprekken, observaties en een helder overzicht van mogelijkheden
+## Veelvoorkomende problemen
 
-3. **implementatie & training (optioneel)**  
-   alleen als het logisch voelt en past bij je organisatie
-
-Geen verplicht traject.  
-Geen hype.  
-Wel duidelijke keuzes.
-
----
-
-## voor wie
-
-Voor ondernemers in de bollenstreek en omgeving die:
-- nuchter willen blijven
-- wél willen verbeteren
-- en AI serieus nemen, zonder erin te verdwalen
+- Steeds dezelfde vragen beantwoorden
+- Onnodig handwerk in administratie
+- Klantinformatie die verspreid staat
+- Teams die langs elkaar heen werken
+- Oplossingen die niet met elkaar praten
 
 ---
 
-## eerste stap
+## Zullen we even sparren?
 
-De eerste stap is een gesprek.  
-Geen verkoop, geen demo.
+In 30 minuten kijken we waar jouw bedrijf tijd verliest en welke kleine stap het meeste oplevert.
 
-Gewoon kijken of het zinvol is om samen verder te denken.  
-Is dat niet zo, dan zeggen we dat ook.
+[Plan een kennismaking](/contact/)
 
-**→ [neem contact op](/contact/)**
+## Veelgestelde vragen
+
+**Is dit alleen voor bedrijven die al iets met AI doen?**
+Nee. Juist niet. We beginnen bij het proces, niet bij de tool.
+
+**Wat kost een kennismaking?**
+Niets. Het is vrijblijvend en bedoeld om te kijken of ik je kan helpen.
+
+**Moet ik direct aan de slag met nieuwe software?**
+Nee. Soms is een simpele procesaanpassing effectiever dan nieuwe tools.
 
 ---
+
+Werk jij in de Duin- en Bollenstreek en wil je minder gedoe met technologie? Laten we kennismaken.

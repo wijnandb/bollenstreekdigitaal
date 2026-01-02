@@ -3,7 +3,7 @@
 title: "Diensten"
 ---
 
-Ik bied o.a. het volgende aan:
+We bieden o.a. het volgende aan:
 
 ### 🎓 Workshops & trainingen
 Interactieve sessies over AI in jouw sector.
