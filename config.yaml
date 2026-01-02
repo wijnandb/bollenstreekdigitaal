@@ -13,15 +13,15 @@ menu:
     - name: Home
       url: /
       weight: 1
-    - name: Over mij
-      url: /about/
-      weight: 2
-    - name: Diensten
-      url: /services/
-      weight: 3
-    - name: Blog
-      url: /blog/
-      weight: 4
+    # - name: Over mij
+    #   url: /about/
+    #   weight: 2
+    # - name: Diensten
+    #   url: /services/
+    #   weight: 3
+    # - name: Blog
+    #   url: /blog/
+    #   weight: 4
     - name: Contact
       url: /contact/
       weight: 5
