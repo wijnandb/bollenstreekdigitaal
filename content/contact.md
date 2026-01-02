@@ -1,12 +1,12 @@
 
 ---
-title: "Contact"
+title: "contact"
+description: "neem contact op"
+draft: false
 ---
 
-Wil je sparren over AI in jouw bedrijf?  
-Mail naar [jouw@email.nl](mailto:jouw@email.nl) of plan een gesprek via [Calendly-link].
+Wil je sparren over wat AI voor jouw bedrijf kan betekenen?
 
----
+Mail ons op: **[info@bollenstreekdigitaal.nl](mailto:info@bollenstreekdigitaal.nl)**  
 
-📍 Locatie: Nederland  
-📞 Beschikbaar voor presentaties, workshops en advies
+We reageren meestal binnen 1 werkdag.
