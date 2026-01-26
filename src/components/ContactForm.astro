@@ -1,52 +1,54 @@
 ---
-// Formspree endpoint - replace YOUR_FORM_ID with actual Formspree form ID
-const formAction = "https://formspree.io/f/YOUR_FORM_ID";
+const listId = "e1c19a58-fb03-11f0-b027-8d6876d28488";
+const formAction = `https://emailoctopus.com/lists/${listId}/members/embedded/1.3/add`;
 ---
 
 <form action={formAction} method="POST" class="space-y-6">
   <div>
-    <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+    <label for="field_1" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
       Naam
     </label>
     <input
       type="text"
-      id="name"
-      name="name"
-      required
+      id="field_1"
+      name="field_1"
+      placeholder="Je naam"
       class="mt-1 block w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-gray-900 shadow-sm transition-colors focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 dark:border-gray-600 dark:bg-gray-800 dark:text-white"
     />
   </div>
 
   <div>
-    <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+    <label for="field_0" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
       E-mailadres
     </label>
     <input
       type="email"
-      id="email"
-      name="email"
+      id="field_0"
+      name="field_0"
       required
+      placeholder="je@email.nl"
       class="mt-1 block w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-gray-900 shadow-sm transition-colors focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 dark:border-gray-600 dark:bg-gray-800 dark:text-white"
     />
   </div>
 
-  <div>
-    <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-      Bericht
-    </label>
-    <textarea
-      id="message"
-      name="message"
-      rows="5"
-      required
-      class="mt-1 block w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-gray-900 shadow-sm transition-colors focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 dark:border-gray-600 dark:bg-gray-800 dark:text-white"
-    ></textarea>
+  <!-- Honeypot field - must stay hidden and empty -->
+  <div aria-hidden="true" style="position: absolute; left: -9999px;">
+    <input
+      type="text"
+      name={`hp${listId}`}
+      tabindex="-1"
+      autocomplete="off"
+    />
   </div>
 
   <button
     type="submit"
-    class="inline-flex items-center justify-center rounded-lg bg-primary-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+    class="inline-flex w-full items-center justify-center rounded-lg bg-primary-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
   >
-    Verstuur bericht
+    Neem contact op
   </button>
+
+  <p class="text-xs text-gray-500 dark:text-gray-400">
+    Je gegevens worden alleen gebruikt om contact met je op te nemen. Geen spam.
+  </p>
 </form>
