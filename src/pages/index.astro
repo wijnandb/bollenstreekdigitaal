@@ -1,0 +1,91 @@
+---
+import Base from "../layouts/Base.astro";
+import Hero from "../components/Hero.astro";
+import Services from "../components/Services.astro";
+import CTA from "../components/CTA.astro";
+---
+
+<Base title="Bollenstreek Digitaal" description="Ik help MKB-bedrijven in de Duin- en Bollenstreek slimmer werken met AI en technologie. Zonder gedoe, met resultaat.">
+  <Hero />
+
+  <!-- Voor wie / Wat je krijgt -->
+  <section class="py-20">
+    <div class="mx-auto max-w-5xl px-6">
+      <div class="grid gap-12 md:grid-cols-2">
+        <div>
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Voor wie</h2>
+          <ul class="mt-4 space-y-3 text-gray-600 dark:text-gray-300">
+            <li class="flex items-start gap-3">
+              <svg class="mt-1 h-5 w-5 shrink-0 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              Ondernemers in de Duin- en Bollenstreek
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="mt-1 h-5 w-5 shrink-0 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              Bedrijven zonder eigen techafdeling
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="mt-1 h-5 w-5 shrink-0 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              Iedereen die merkt dat werk onnodig veel tijd kost
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Hoe ik werk</h2>
+          <ol class="mt-4 space-y-3 text-gray-600 dark:text-gray-300">
+            <li class="flex items-start gap-3">
+              <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary-100 text-xs font-bold text-primary-600 dark:bg-primary-900 dark:text-primary-400">1</span>
+              Kennismaking (vrijblijvend)
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary-100 text-xs font-bold text-primary-600 dark:bg-primary-900 dark:text-primary-400">2</span>
+              Knelpunten in kaart brengen
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary-100 text-xs font-bold text-primary-600 dark:bg-primary-900 dark:text-primary-400">3</span>
+              Meest kansrijke verbeteringen kiezen
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary-100 text-xs font-bold text-primary-600 dark:bg-primary-900 dark:text-primary-400">4</span>
+              Kort experiment of directe oplossing
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary-100 text-xs font-bold text-primary-600 dark:bg-primary-900 dark:text-primary-400">5</span>
+              Evalueren en opschalen
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Services />
+
+  <!-- FAQ section -->
+  <section class="border-t border-gray-100 py-20 dark:border-gray-800">
+    <div class="mx-auto max-w-3xl px-6">
+      <h2 class="text-center text-3xl font-bold text-gray-900 dark:text-white">Veelgestelde vragen</h2>
+      <div class="mt-12 space-y-8">
+        <div>
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Is dit alleen voor bedrijven die al iets met AI doen?</h3>
+          <p class="mt-2 text-gray-600 dark:text-gray-300">Nee. Juist niet. We beginnen bij het proces, niet bij de tool.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Wat kost een kennismaking?</h3>
+          <p class="mt-2 text-gray-600 dark:text-gray-300">Niets. Het is vrijblijvend en bedoeld om te kijken of ik je kan helpen.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Moet ik direct aan de slag met nieuwe software?</h3>
+          <p class="mt-2 text-gray-600 dark:text-gray-300">Nee. Soms is een simpele procesaanpassing effectiever dan nieuwe tools.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTA />
+</Base>
