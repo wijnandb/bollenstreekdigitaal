@@ -221,10 +221,15 @@ import CTA from "../components/CTA.astro";
     var naam = document.getElementById("scan-naam").value;
     if (email) {
       // Fire-and-forget lead capture
-      fetch("/api/subscribe", {
+      fetch("https://formsubmit.co/ajax/contact@bollenstreekdigitaal.nl", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: email, naam: naam, bericht: "AI-scan afgerond, score: " + totalScore }),
+        body: JSON.stringify({
+          _subject: "AI-scan afgerond - Bollenstreek Digitaal",
+          email: email,
+          naam: naam,
+          bericht: "AI-scan afgerond, score: " + totalScore
+        }),
       }).catch(function() {});
     }
     document.getElementById("email-gate").classList.add("hidden");
