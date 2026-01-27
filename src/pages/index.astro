@@ -9,53 +9,65 @@ import CTA from "../components/CTA.astro";
   <Hero />
 
   <!-- Voor wie / Wat je krijgt -->
-  <section class="py-20">
+  <section class="relative py-20">
     <div class="mx-auto max-w-5xl px-6">
       <div class="grid gap-12 md:grid-cols-2">
-        <div>
+        <div class="rounded-2xl border border-gray-100 bg-white p-8 shadow-sm dark:border-gray-800 dark:bg-gray-900">
+          <div class="mb-4 inline-flex items-center gap-2 rounded-full bg-primary-100 px-3 py-1 text-xs font-semibold text-primary-700 dark:bg-primary-900/50 dark:text-primary-300">
+            <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+            Voor wie
+          </div>
           <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Voor wie</h2>
           <ul class="mt-4 space-y-3 text-gray-600 dark:text-gray-300">
             <li class="flex items-start gap-3">
-              <svg class="mt-1 h-5 w-5 shrink-0 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="mt-1 h-5 w-5 shrink-0 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
               Ondernemers in de Duin- en Bollenstreek
             </li>
             <li class="flex items-start gap-3">
-              <svg class="mt-1 h-5 w-5 shrink-0 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="mt-1 h-5 w-5 shrink-0 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
               Bedrijven zonder eigen techafdeling
             </li>
             <li class="flex items-start gap-3">
-              <svg class="mt-1 h-5 w-5 shrink-0 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="mt-1 h-5 w-5 shrink-0 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
               Iedereen die merkt dat werk onnodig veel tijd kost
             </li>
           </ul>
         </div>
-        <div>
+        <div class="rounded-2xl border border-gray-100 bg-white p-8 shadow-sm dark:border-gray-800 dark:bg-gray-900">
+          <div class="mb-4 inline-flex items-center gap-2 rounded-full bg-accent-400/15 px-3 py-1 text-xs font-semibold text-accent-600 dark:bg-accent-500/15 dark:text-accent-400">
+            <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+            Onze aanpak
+          </div>
           <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Hoe wij werken</h2>
           <ol class="mt-4 space-y-3 text-gray-600 dark:text-gray-300">
             <li class="flex items-start gap-3">
-              <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary-100 text-xs font-bold text-primary-600 dark:bg-primary-900 dark:text-primary-400">1</span>
+              <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary-500 to-primary-700 text-xs font-bold text-white">1</span>
               Kennismaking (vrijblijvend)
             </li>
             <li class="flex items-start gap-3">
-              <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary-100 text-xs font-bold text-primary-600 dark:bg-primary-900 dark:text-primary-400">2</span>
+              <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary-500 to-primary-700 text-xs font-bold text-white">2</span>
               Knelpunten in kaart brengen
             </li>
             <li class="flex items-start gap-3">
-              <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary-100 text-xs font-bold text-primary-600 dark:bg-primary-900 dark:text-primary-400">3</span>
+              <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary-500 to-primary-700 text-xs font-bold text-white">3</span>
               Meest kansrijke verbeteringen kiezen
             </li>
             <li class="flex items-start gap-3">
-              <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary-100 text-xs font-bold text-primary-600 dark:bg-primary-900 dark:text-primary-400">4</span>
+              <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary-500 to-primary-700 text-xs font-bold text-white">4</span>
               Kort experiment of directe oplossing
             </li>
             <li class="flex items-start gap-3">
-              <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary-100 text-xs font-bold text-primary-600 dark:bg-primary-900 dark:text-primary-400">5</span>
+              <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary-500 to-primary-700 text-xs font-bold text-white">5</span>
               Evalueren en opschalen
             </li>
           </ol>
@@ -69,17 +81,20 @@ import CTA from "../components/CTA.astro";
   <!-- FAQ section -->
   <section class="border-t border-gray-100 py-20 dark:border-gray-800">
     <div class="mx-auto max-w-3xl px-6">
-      <h2 class="text-center text-3xl font-bold text-gray-900 dark:text-white">Veelgestelde vragen</h2>
-      <div class="mt-12 space-y-8">
-        <div>
+      <div class="text-center">
+        <span class="inline-flex items-center gap-2 rounded-full bg-primary-100 px-3 py-1 text-xs font-semibold text-primary-700 dark:bg-primary-900/50 dark:text-primary-300">FAQ</span>
+        <h2 class="mt-4 text-3xl font-bold text-gray-900 dark:text-white">Veelgestelde vragen</h2>
+      </div>
+      <div class="mt-12 space-y-6">
+        <div class="rounded-xl border border-gray-200 bg-white p-6 dark:border-gray-700 dark:bg-gray-900">
           <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Is dit alleen voor bedrijven die al iets met AI doen?</h3>
           <p class="mt-2 text-gray-600 dark:text-gray-300">Nee. Juist niet. We beginnen bij het proces, niet bij de tool.</p>
         </div>
-        <div>
+        <div class="rounded-xl border border-gray-200 bg-white p-6 dark:border-gray-700 dark:bg-gray-900">
           <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Wat kost een kennismaking?</h3>
           <p class="mt-2 text-gray-600 dark:text-gray-300">Niets. Het is vrijblijvend en bedoeld om te kijken of wij je kunnen helpen.</p>
         </div>
-        <div>
+        <div class="rounded-xl border border-gray-200 bg-white p-6 dark:border-gray-700 dark:bg-gray-900">
           <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Moet ik direct aan de slag met nieuwe software?</h3>
           <p class="mt-2 text-gray-600 dark:text-gray-300">Nee. Soms is een simpele procesaanpassing effectiever dan nieuwe tools.</p>
         </div>
