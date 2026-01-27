@@ -1,10 +1,11 @@
 ---
-import Base from "../layouts/Base.astro";
-import CTA from "../components/CTA.astro";
+import Base from "../../layouts/Base.astro";
+import CTA from "../../components/CTA.astro";
 
 const services = [
   {
     title: "Workshops & trainingen",
+    href: "/diensten/workshops/",
     description:
       "Interactieve sessies over AI in jouw sector. Je team leert mogelijkheden herkennen en direct toepassen in de dagelijkse praktijk.",
     details: [
@@ -17,6 +18,7 @@ const services = [
   },
   {
     title: "Advies & implementatie",
+    href: "/diensten/advies/",
     description:
       "Van idee naar actie. Praktisch en resultaatgericht advies over welke AI-toepassingen echt waarde opleveren voor jouw bedrijf.",
     details: [
@@ -29,6 +31,7 @@ const services = [
   },
   {
     title: "Strategie & digitale transformatie",
+    href: "/diensten/strategie/",
     description:
       "Een heldere scan van je organisatie, een concreet plan en begeleiding richting meer digitale slagkracht. Stap voor stap.",
     details: [
@@ -85,6 +88,15 @@ const services = [
                 <p class="mt-4 text-gray-600 dark:text-gray-300">
                   {service.description}
                 </p>
+                <a
+                  href={service.href}
+                  class="mt-4 inline-flex items-center text-sm font-medium text-primary-600 transition-colors hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
+                >
+                  Meer informatie
+                  <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </a>
               </div>
               <div class="md:col-span-2">
                 <ul class="space-y-3">

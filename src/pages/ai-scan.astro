@@ -1,0 +1,222 @@
+---
+import Base from "../layouts/Base.astro";
+import CTA from "../components/CTA.astro";
+---
+
+<Base
+  title="Gratis AI-scan"
+  description="Ontdek in 2 minuten of AI jouw bedrijf kan helpen. Beantwoord 6 korte vragen en krijg direct inzicht."
+>
+  <section class="py-20">
+    <div class="mx-auto max-w-3xl px-6">
+      <h1
+        class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white"
+      >
+        Gratis AI-scan
+      </h1>
+      <p class="mt-4 text-lg text-gray-600 dark:text-gray-300">
+        Beantwoord 6 korte vragen en ontdek of AI jouw bedrijf kan helpen.
+        Geen inlog, geen kosten, direct resultaat.
+      </p>
+
+      <!-- Quiz -->
+      <div id="quiz" class="mt-12">
+        <div id="quiz-progress" class="mb-8">
+          <div class="flex justify-between text-sm text-gray-500 dark:text-gray-400">
+            <span>Vraag <span id="current-q">1</span> van 6</span>
+            <span id="progress-pct">0%</span>
+          </div>
+          <div class="mt-2 h-2 rounded-full bg-gray-200 dark:bg-gray-700">
+            <div
+              id="progress-bar"
+              class="h-2 rounded-full bg-primary-600 transition-all duration-300"
+              style="width: 0%"
+            >
+            </div>
+          </div>
+        </div>
+
+        <div id="question-container">
+          <!-- Questions rendered by JS -->
+        </div>
+      </div>
+
+      <!-- Results (hidden initially) -->
+      <div id="results" class="mt-12 hidden">
+        <div
+          class="rounded-xl border border-gray-200 bg-gray-50 p-8 dark:border-gray-700 dark:bg-gray-900"
+        >
+          <h2
+            class="text-2xl font-bold text-gray-900 dark:text-white"
+            id="result-title"
+          >
+          </h2>
+          <p class="mt-4 text-lg text-gray-600 dark:text-gray-300" id="result-summary">
+          </p>
+
+          <div class="mt-8" id="result-details"></div>
+
+          <div
+            class="mt-8 rounded-lg bg-primary-50 p-6 dark:bg-primary-900/20"
+          >
+            <h3
+              class="font-semibold text-primary-900 dark:text-primary-300"
+            >
+              Wil je weten wat dit concreet betekent voor jouw bedrijf?
+            </h3>
+            <p class="mt-2 text-sm text-primary-700 dark:text-primary-400">
+              Plan een vrijblijvende kennismaking en we bespreken de
+              uitkomsten samen.
+            </p>
+            <a
+              href="/contact/"
+              class="mt-4 inline-flex items-center justify-center rounded-lg bg-primary-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-primary-700"
+            >
+              Plan een kennismaking
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTA />
+</Base>
+
+<script is:inline>
+  const questions = [
+    {
+      q: "Hoeveel tijd besteden jij of je team aan terugkerende taken zoals e-mails beantwoorden, gegevens invoeren of overzichten maken?",
+      options: [
+        { text: "Weinig, dat loopt prima", score: 0 },
+        { text: "Soms best veel, maar het hoort erbij", score: 1 },
+        { text: "Te veel, het kost ons uren per week", score: 2 },
+      ],
+    },
+    {
+      q: "Hoe vaak worden dezelfde vragen gesteld door klanten of collega's?",
+      options: [
+        { text: "Zelden, alles is duidelijk", score: 0 },
+        { text: "Regelmatig, we beantwoorden vaak hetzelfde", score: 1 },
+        { text: "Dagelijks, het is een grote tijdvreter", score: 2 },
+      ],
+    },
+    {
+      q: "Staat klant- of projectinformatie op meerdere plekken (Excel, e-mail, notitieboekje)?",
+      options: [
+        { text: "Nee, we werken vanuit \u00e9\u00e9n systeem", score: 0 },
+        { text: "Gedeeltelijk, sommige dingen staan verspreid", score: 1 },
+        { text: "Ja, we zoeken regelmatig naar de juiste informatie", score: 2 },
+      ],
+    },
+    {
+      q: "Nemen jullie beslissingen vooral op basis van gevoel of op basis van data?",
+      options: [
+        { text: "Vooral op data en overzichten", score: 0 },
+        { text: "Mix van beide", score: 1 },
+        { text: "Vooral op gevoel en ervaring", score: 2 },
+      ],
+    },
+    {
+      q: "Hoe zou je de digitale vaardigheid van je team omschrijven?",
+      options: [
+        { text: "Sterk, we pakken nieuwe tools snel op", score: 0 },
+        { text: "Wisselend, sommigen wel, anderen niet", score: 1 },
+        { text: "Beperkt, we werken het liefst met wat we kennen", score: 1 },
+      ],
+    },
+    {
+      q: "Heb je het gevoel dat je bedrijf effici\u00ebnter zou kunnen werken, maar weet je niet precies waar te beginnen?",
+      options: [
+        { text: "Nee, we zijn best tevreden", score: 0 },
+        { text: "Ja, op sommige vlakken", score: 1 },
+        { text: "Absoluut, er is veel te winnen", score: 2 },
+      ],
+    },
+  ];
+
+  let currentQuestion = 0;
+  let totalScore = 0;
+
+  function renderQuestion(index) {
+    const q = questions[index];
+    const container = document.getElementById("question-container");
+    document.getElementById("current-q").textContent = String(index + 1);
+
+    let html = '<h2 class="text-xl font-semibold text-gray-900 dark:text-white">' + q.q + "</h2>";
+    html += '<div class="mt-6 space-y-3">';
+    q.options.forEach(function (opt, i) {
+      html +=
+        '<button data-score="' +
+        opt.score +
+        '" class="quiz-option block w-full rounded-lg border border-gray-200 bg-white px-5 py-4 text-left text-gray-700 transition-all hover:border-primary-500 hover:bg-primary-50 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200 dark:hover:border-primary-400 dark:hover:bg-primary-900/30">' +
+        opt.text +
+        "</button>";
+    });
+    html += "</div>";
+    container.innerHTML = html;
+
+    document.querySelectorAll(".quiz-option").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        totalScore += parseInt(this.getAttribute("data-score"));
+        currentQuestion++;
+        var pct = Math.round((currentQuestion / questions.length) * 100);
+        document.getElementById("progress-bar").style.width = pct + "%";
+        document.getElementById("progress-pct").textContent = pct + "%";
+
+        if (currentQuestion < questions.length) {
+          renderQuestion(currentQuestion);
+        } else {
+          showResults();
+        }
+      });
+    });
+  }
+
+  function showResults() {
+    document.getElementById("quiz").classList.add("hidden");
+    document.getElementById("results").classList.remove("hidden");
+
+    var title, summary, details;
+
+    if (totalScore <= 3) {
+      title = "Je bedrijf draait goed";
+      summary =
+        "Op basis van je antwoorden lijkt je bedrijf al vrij effici\u00ebnt te werken. AI kan mogelijk op specifieke punten nog waarde toevoegen, maar er is geen urgente noodzaak.";
+      details =
+        '<ul class="space-y-3 text-gray-600 dark:text-gray-300">' +
+        '<li class="flex items-start gap-3"><span class="mt-1 text-primary-600 dark:text-primary-400">&#10003;</span>Houd ontwikkelingen in AI bij voor jouw sector</li>' +
+        '<li class="flex items-start gap-3"><span class="mt-1 text-primary-600 dark:text-primary-400">&#10003;</span>Overweeg een workshop om kansen te verkennen</li>' +
+        '<li class="flex items-start gap-3"><span class="mt-1 text-primary-600 dark:text-primary-400">&#10003;</span>Focus op processen waar het meeste tijdwinst te halen is</li>' +
+        "</ul>";
+    } else if (totalScore <= 7) {
+      title = "Er liggen kansen";
+      summary =
+        "Je bedrijf werkt redelijk, maar er zijn duidelijke punten waar slimmer gewerkt kan worden. AI en procesoptimalisatie kunnen hier concreet helpen.";
+      details =
+        '<ul class="space-y-3 text-gray-600 dark:text-gray-300">' +
+        '<li class="flex items-start gap-3"><span class="mt-1 text-primary-600 dark:text-primary-400">&#10003;</span>Breng de grootste tijdvreters in kaart</li>' +
+        '<li class="flex items-start gap-3"><span class="mt-1 text-primary-600 dark:text-primary-400">&#10003;</span>Bekijk welke taken geautomatiseerd kunnen worden</li>' +
+        '<li class="flex items-start gap-3"><span class="mt-1 text-primary-600 dark:text-primary-400">&#10003;</span>Start met \u00e9\u00e9n concrete verbetering en evalueer</li>' +
+        '<li class="flex items-start gap-3"><span class="mt-1 text-primary-600 dark:text-primary-400">&#10003;</span>Een vrijblijvend gesprek kan snel duidelijkheid geven</li>' +
+        "</ul>";
+    } else {
+      title = "Er is veel te winnen";
+      summary =
+        "Je bedrijf heeft op meerdere vlakken ruimte voor verbetering. AI en digitale hulpmiddelen kunnen een groot verschil maken in effici\u00ebntie en overzicht.";
+      details =
+        '<ul class="space-y-3 text-gray-600 dark:text-gray-300">' +
+        '<li class="flex items-start gap-3"><span class="mt-1 text-primary-600 dark:text-primary-400">&#10003;</span>Prioriteer: welk probleem kost de meeste tijd of geld?</li>' +
+        '<li class="flex items-start gap-3"><span class="mt-1 text-primary-600 dark:text-primary-400">&#10003;</span>Centraliseer klant- en projectinformatie</li>' +
+        '<li class="flex items-start gap-3"><span class="mt-1 text-primary-600 dark:text-primary-400">&#10003;</span>Automatiseer terugkerende taken en communicatie</li>' +
+        '<li class="flex items-start gap-3"><span class="mt-1 text-primary-600 dark:text-primary-400">&#10003;</span>Een kennismaking helpt om de juiste eerste stap te kiezen</li>' +
+        "</ul>";
+    }
+
+    document.getElementById("result-title").textContent = title;
+    document.getElementById("result-summary").textContent = summary;
+    document.getElementById("result-details").innerHTML = details;
+  }
+
+  renderQuestion(0);
+</script>

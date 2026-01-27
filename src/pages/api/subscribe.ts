@@ -8,7 +8,7 @@ export const prerender = false;
 export const POST: APIRoute = async ({ request }) => {
   try {
     const data = await request.json();
-    const { email, naam } = data;
+    const { email, naam, bericht } = data;
 
     if (!email) {
       return new Response(
@@ -29,6 +29,7 @@ export const POST: APIRoute = async ({ request }) => {
           email_address: email,
           fields: {
             FirstName: naam || "",
+            Notes: bericht || "",
           },
           tags: ["contact", "website"],
           status: "subscribed",
