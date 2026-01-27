@@ -124,14 +124,10 @@ const year = new Date().getFullYear();
     e.preventDefault();
     var email = this.querySelector('input[name="email"]').value;
     if (email) {
-      fetch("https://formsubmit.co/ajax/contact@bollenstreekdigitaal.nl", {
+      fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          _subject: "Nieuwsbrief aanmelding - Bollenstreek Digitaal",
-          email: email,
-          bericht: "Nieuwsbrief aanmelding"
-        }),
+        body: JSON.stringify({ email: email, naam: "", bericht: "Nieuwsbrief aanmelding" }),
       }).catch(function() {});
       this.classList.add("hidden");
       document.getElementById("newsletter-success").classList.remove("hidden");

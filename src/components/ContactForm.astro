@@ -133,6 +133,10 @@
     const formData = new FormData(form);
     const email = (formData.get("email") as string) || "";
     const naam = (formData.get("naam") as string) || "";
+    const bedrijfsnaam = (formData.get("bedrijfsnaam") as string) || "";
+    const telefoon = (formData.get("telefoon") as string) || "";
+    const dienst = (formData.get("dienst") as string) || "";
+    const bericht = (formData.get("bericht") as string) || "";
 
     if (!naam.trim()) {
       emailInput?.focus();
@@ -153,26 +157,20 @@
     submitBtn.textContent = "Verzenden...";
 
     try {
-      const response = await fetch("https://formsubmit.co/ajax/contact@bollenstreekdigitaal.nl", {
+      const response = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          _subject: "Nieuw contactformulier - Bollenstreek Digitaal",
-          naam: formData.get("naam"),
-          email: formData.get("email"),
-          bedrijfsnaam: formData.get("bedrijfsnaam"),
-          telefoon: formData.get("telefoon"),
-          dienst: formData.get("dienst"),
-          bericht: formData.get("bericht"),
-        }),
+        body: JSON.stringify({ email, naam, bedrijfsnaam, telefoon, dienst, bericht }),
       });
 
-      if (response.ok) {
+      const result = await response.json();
+
+      if (result.success) {
         form.classList.add("hidden");
         formSuccess?.classList.remove("hidden");
       } else {
         if (formError) {
-          formError.textContent = "Er ging iets mis. Probeer het later opnieuw.";
+          formError.textContent = result.error || "Er ging iets mis. Probeer het later opnieuw.";
           formError.classList.remove("hidden");
         }
         submitBtn.disabled = false;
