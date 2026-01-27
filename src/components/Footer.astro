@@ -2,27 +2,75 @@
 const year = new Date().getFullYear();
 ---
 
-<footer class="border-t border-gray-200 dark:border-gray-800">
-  <div
-    class="mx-auto flex max-w-5xl flex-col items-center justify-between gap-4 px-6 py-8 text-sm text-gray-500 dark:text-gray-400 sm:flex-row"
-  >
-    <p>&copy; {year} Bollenstreek Digitaal</p>
-    <div class="flex flex-wrap gap-x-6 gap-y-2">
-      <a
-        href="/contact/"
-        class="transition-colors hover:text-primary-600 dark:hover:text-primary-400"
-        >Contact</a
-      >
-      <a
-        href="tel:+31712032103"
-        class="transition-colors hover:text-primary-600 dark:hover:text-primary-400"
-        >071 - 203 2103</a
-      >
-      <a
-        href="mailto:contact@bollenstreekdigitaal.nl"
-        class="transition-colors hover:text-primary-600 dark:hover:text-primary-400"
-        >contact@bollenstreekdigitaal.nl</a
-      >
+<footer class="border-t border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-gray-900">
+  <div class="mx-auto max-w-5xl px-6 py-12">
+    <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+      <!-- Brand -->
+      <div>
+        <a href="/" class="text-lg font-bold text-primary-600 dark:text-primary-400">
+          Bollenstreek Digitaal
+        </a>
+        <p class="mt-3 text-sm text-gray-600 dark:text-gray-400">
+          Slimmer ondernemen in de Duin- en Bollenstreek. Met AI die bij je past.
+        </p>
+      </div>
+
+      <!-- Diensten -->
+      <div>
+        <h3 class="text-sm font-semibold text-gray-900 dark:text-white">Diensten</h3>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li>
+            <a href="/diensten/workshops/" class="text-gray-600 transition-colors hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400">Workshops & trainingen</a>
+          </li>
+          <li>
+            <a href="/diensten/advies/" class="text-gray-600 transition-colors hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400">Advies & implementatie</a>
+          </li>
+          <li>
+            <a href="/diensten/strategie/" class="text-gray-600 transition-colors hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400">Strategie & transformatie</a>
+          </li>
+          <li>
+            <a href="/ai-scan/" class="text-gray-600 transition-colors hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400">Gratis AI-scan</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Bedrijf -->
+      <div>
+        <h3 class="text-sm font-semibold text-gray-900 dark:text-white">Bedrijf</h3>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li>
+            <a href="/over-ons/" class="text-gray-600 transition-colors hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400">Over ons</a>
+          </li>
+          <li>
+            <a href="/blog/" class="text-gray-600 transition-colors hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400">Blog</a>
+          </li>
+          <li>
+            <a href="/contact/" class="text-gray-600 transition-colors hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400">Contact</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h3 class="text-sm font-semibold text-gray-900 dark:text-white">Contact</h3>
+        <ul class="mt-3 space-y-2 text-sm text-gray-600 dark:text-gray-400">
+          <li>
+            Gooweg 14<br />
+            2203 AB Noordwijk
+          </li>
+          <li>
+            <a href="tel:+31712032103" class="transition-colors hover:text-primary-600 dark:hover:text-primary-400">071 - 203 2103</a>
+          </li>
+          <li>
+            <a href="mailto:contact@bollenstreekdigitaal.nl" class="transition-colors hover:text-primary-600 dark:hover:text-primary-400">contact@bollenstreekdigitaal.nl</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="mt-10 border-t border-gray-200 pt-6 text-center text-sm text-gray-500 dark:border-gray-800 dark:text-gray-500">
+      <p>&copy; {year} Bollenstreek Digitaal</p>
     </div>
   </div>
 </footer>
