@@ -31,11 +31,48 @@ import CTA from "../components/CTA.astro";
         </p>
 
         <p>
-          Wij werken niet vanuit een vast pakket of product. Elk traject begint met
-          luisteren: waar gaat tijd verloren? Waar zit frictie? Wat zou het
-          meeste opleveren als het beter zou werken? Op basis daarvan zoeken we
-          samen naar de slimste stap vooruit.
+          Elk traject begint met luisteren: waar gaat tijd verloren? Waar zit
+          frictie? Wat zou het meeste opleveren als het beter zou werken? Op
+          basis daarvan zoeken we samen naar de slimste stap vooruit.
         </p>
+
+        <!-- Team -->
+        <h2 class="mt-12 text-2xl font-bold text-gray-900 dark:text-white">
+          Het team
+        </h2>
+
+        <div class="mt-6 grid gap-8 sm:grid-cols-3">
+          <div class="text-center">
+            <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-primary-100 text-2xl font-bold text-primary-600 dark:bg-primary-900 dark:text-primary-400">
+              WB
+            </div>
+            <h3 class="mt-4 font-semibold text-gray-900 dark:text-white">Wijnand Baretta</h3>
+            <p class="text-sm text-primary-600 dark:text-primary-400">Oprichter &amp; strateeg</p>
+            <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">
+              20+ jaar ervaring in technologie en digitale innovatie. Vertaalt complexe technologie naar praktische kansen voor ondernemers.
+            </p>
+          </div>
+          <div class="text-center">
+            <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-accent-400/15 text-2xl font-bold text-accent-600 dark:bg-accent-500/15 dark:text-accent-400">
+              PB
+            </div>
+            <h3 class="mt-4 font-semibold text-gray-900 dark:text-white">Pel&eacute; Baretta</h3>
+            <p class="text-sm text-primary-600 dark:text-primary-400">Workshops &amp; training</p>
+            <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">
+              Maakt AI begrijpelijk voor iedereen. Geeft workshops en trainingen die teams direct in beweging brengen.
+            </p>
+          </div>
+          <div class="text-center">
+            <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-primary-100 text-2xl font-bold text-primary-600 dark:bg-primary-900 dark:text-primary-400">
+              LB
+            </div>
+            <h3 class="mt-4 font-semibold text-gray-900 dark:text-white">Levi Baretta</h3>
+            <p class="text-sm text-primary-600 dark:text-primary-400">Techniek &amp; ontwikkeling</p>
+            <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">
+              Bouwt de websites en systemen. Van snelle sites tot slimme koppelingen &mdash; zorgt dat de techniek werkt.
+            </p>
+          </div>
+        </div>
 
         <h2
           class="mt-12 text-2xl font-bold text-gray-900 dark:text-white"
@@ -59,7 +96,7 @@ import CTA from "../components/CTA.astro";
             </svg>
             <span>
               <strong class="text-gray-900 dark:text-white">Nuchter</strong> &mdash;
-              Geen hype, geen verkooppraatje. Gewoon kijken wat werkt.
+              We kijken naar wat werkt. Eerlijk advies, onderbouwd met resultaten.
             </span>
           </li>
           <li class="flex items-start gap-3">
@@ -138,5 +175,9 @@ import CTA from "../components/CTA.astro";
     </div>
   </section>
 
-  <CTA />
+  <CTA
+    heading="Wil je ons leren kennen?"
+    description="Plan een gesprek. We vertellen je graag meer over onze aanpak en hoe we jouw bedrijf kunnen helpen."
+    buttonText="Neem contact op"
+  />
 </Base>
