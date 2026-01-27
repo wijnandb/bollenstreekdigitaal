@@ -1,11 +1,22 @@
 ---
 import Base from "../../layouts/Base.astro";
 import CTA from "../../components/CTA.astro";
+
+const breadcrumbs = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://bollenstreekdigitaal.nl" },
+    { "@type": "ListItem", position: 2, name: "Diensten", item: "https://bollenstreekdigitaal.nl/diensten/" },
+    { "@type": "ListItem", position: 3, name: "Advies & implementatie", item: "https://bollenstreekdigitaal.nl/diensten/advies/" },
+  ],
+};
 ---
 
 <Base
   title="Advies & implementatie"
-  description="Praktisch AI-advies voor MKB-bedrijven. Van analyse tot implementatie, met meetbaar resultaat."
+  description="Praktisch AI-advies voor MKB-bedrijven in de Bollenstreek. Van analyse tot implementatie, met meetbaar resultaat."
+  jsonLd={breadcrumbs}
 >
   <section class="py-20">
     <div class="mx-auto max-w-3xl px-6">

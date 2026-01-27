@@ -1,11 +1,22 @@
 ---
 import Base from "../../layouts/Base.astro";
 import CTA from "../../components/CTA.astro";
+
+const breadcrumbs = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://bollenstreekdigitaal.nl" },
+    { "@type": "ListItem", position: 2, name: "Diensten", item: "https://bollenstreekdigitaal.nl/diensten/" },
+    { "@type": "ListItem", position: 3, name: "Websites die converteren", item: "https://bollenstreekdigitaal.nl/diensten/websites/" },
+  ],
+};
 ---
 
 <Base
   title="Websites die converteren"
-  description="Professionele websites voor MKB-bedrijven. Snel, vindbaar en gebouwd om bezoekers om te zetten in klanten."
+  description="Professionele websites voor MKB-bedrijven in Noordwijk, Katwijk, Leiden en de Bollenstreek. Snel, vindbaar en converterend."
+  jsonLd={breadcrumbs}
 >
   <section class="py-20">
     <div class="mx-auto max-w-3xl px-6">

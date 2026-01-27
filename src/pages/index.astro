@@ -3,9 +3,68 @@ import Base from "../layouts/Base.astro";
 import Hero from "../components/Hero.astro";
 import Services from "../components/Services.astro";
 import CTA from "../components/CTA.astro";
+
+const localBusiness = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "Bollenstreek Digitaal",
+  description:
+    "AI-advies, digitale transformatie en webontwikkeling voor MKB-bedrijven in de Duin- en Bollenstreek.",
+  url: "https://bollenstreekdigitaal.nl",
+  telephone: "+31712032103",
+  email: "contact@bollenstreekdigitaal.nl",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Gooweg 14",
+    addressLocality: "Noordwijk",
+    postalCode: "2203 AB",
+    addressRegion: "Zuid-Holland",
+    addressCountry: "NL",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 52.2361,
+    longitude: 4.4414,
+  },
+  areaServed: [
+    { "@type": "City", name: "Noordwijk" },
+    { "@type": "City", name: "Katwijk" },
+    { "@type": "City", name: "Leiden" },
+    { "@type": "City", name: "Lisse" },
+    { "@type": "City", name: "Hillegom" },
+    { "@type": "City", name: "Noordwijkerhout" },
+    { "@type": "City", name: "Sassenheim" },
+    { "@type": "City", name: "Voorhout" },
+    { "@type": "City", name: "Warmond" },
+    { "@type": "City", name: "Oegstgeest" },
+    { "@type": "City", name: "Voorschoten" },
+    { "@type": "City", name: "Rijnsburg" },
+    { "@type": "City", name: "Valkenburg" },
+    { "@type": "City", name: "Teylingen" },
+  ],
+  knowsAbout: [
+    "Artificial Intelligence",
+    "Digitale transformatie",
+    "AI-advies MKB",
+    "Webontwikkeling",
+    "Procesoptimalisatie",
+  ],
+  priceRange: "$$",
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    opens: "09:00",
+    closes: "17:00",
+  },
+  sameAs: ["https://github.com/wijnandb/bollenstreekdigitaal"],
+};
 ---
 
-<Base title="Bollenstreek Digitaal" description="Wij helpen MKB-bedrijven in de Duin- en Bollenstreek slimmer werken met AI en technologie. Zonder gedoe, met resultaat.">
+<Base
+  title="Bollenstreek Digitaal"
+  description="Wij helpen MKB-bedrijven in de Duin- en Bollenstreek slimmer werken met AI en technologie. Zonder gedoe, met resultaat."
+  jsonLd={localBusiness}
+>
   <Hero />
 
   <!-- Voor wie / Wat je krijgt -->

@@ -18,9 +18,59 @@ const formattedDate = post.data.date.toLocaleDateString("nl-NL", {
   month: "long",
   day: "numeric",
 });
+
+const isoDate = post.data.date.toISOString();
+const postUrl = new URL(`/blog/${post.id}/`, Astro.site).href;
+
+const articleJsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.data.title,
+    description: post.data.description,
+    datePublished: isoDate,
+    dateModified: isoDate,
+    author: {
+      "@type": "Organization",
+      name: "Bollenstreek Digitaal",
+      url: "https://bollenstreekdigitaal.nl",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Bollenstreek Digitaal",
+      url: "https://bollenstreekdigitaal.nl",
+    },
+    mainEntityOfPage: postUrl,
+    inLanguage: "nl",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://bollenstreekdigitaal.nl",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blog",
+        item: "https://bollenstreekdigitaal.nl/blog/",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: post.data.title,
+        item: postUrl,
+      },
+    ],
+  },
+];
 ---
 
-<Base title={post.data.title} description={post.data.description}>
+<Base title={post.data.title} description={post.data.description} ogType="article" jsonLd={articleJsonLd}>
   <article class="py-20">
     <div class="mx-auto max-w-3xl px-6">
       <a

@@ -1,11 +1,22 @@
 ---
 import Base from "../../layouts/Base.astro";
 import CTA from "../../components/CTA.astro";
+
+const breadcrumbs = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://bollenstreekdigitaal.nl" },
+    { "@type": "ListItem", position: 2, name: "Diensten", item: "https://bollenstreekdigitaal.nl/diensten/" },
+    { "@type": "ListItem", position: 3, name: "Workshops & trainingen", item: "https://bollenstreekdigitaal.nl/diensten/workshops/" },
+  ],
+};
 ---
 
 <Base
   title="Workshops & trainingen"
   description="Interactieve AI-workshops voor MKB-teams in de Bollenstreek. Van introductie tot hands-on werken met AI-tools."
+  jsonLd={breadcrumbs}
 >
   <section class="py-20">
     <div class="mx-auto max-w-3xl px-6">
