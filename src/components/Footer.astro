@@ -83,32 +83,6 @@ const year = new Date().getFullYear();
       </div>
     </div>
 
-    <!-- Newsletter signup -->
-    <div class="mt-10 border-t border-gray-800 pt-8">
-      <div class="mx-auto max-w-md text-center">
-        <h3 class="text-sm font-semibold text-white">Ontvang praktische AI-tips</h3>
-        <p class="mt-1 text-sm text-gray-400">
-          Maandelijks een korte mail met concrete AI-kansen voor ondernemers.
-        </p>
-        <form id="footer-newsletter" class="mt-3 flex gap-2">
-          <input
-            type="email"
-            name="email"
-            required
-            placeholder="je@email.nl"
-            class="min-w-0 flex-1 rounded-lg border border-gray-600 bg-gray-800 px-3 py-2 text-sm text-white shadow-sm placeholder:text-gray-500 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20"
-          />
-          <button
-            type="submit"
-            class="rounded-lg bg-primary-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-primary-700"
-          >
-            Aanmelden
-          </button>
-        </form>
-        <p id="newsletter-success" class="mt-2 hidden text-sm text-primary-400">Je bent aangemeld!</p>
-      </div>
-    </div>
-
     <!-- Bottom bar -->
     <div class="mt-8 border-t border-gray-800 pt-6 text-center text-sm text-gray-500">
       <p>&copy; {year} Bollenstreek Digitaal</p>
@@ -116,18 +90,3 @@ const year = new Date().getFullYear();
   </div>
 </footer>
 
-<script is:inline>
-  document.getElementById("footer-newsletter").addEventListener("submit", function(e) {
-    e.preventDefault();
-    var email = this.querySelector('input[name="email"]').value;
-    if (email) {
-      fetch("/api/subscribe", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: email, naam: "", bericht: "Nieuwsbrief aanmelding" }),
-      }).catch(function() {});
-      this.classList.add("hidden");
-      document.getElementById("newsletter-success").classList.remove("hidden");
-    }
-  });
-</script>
