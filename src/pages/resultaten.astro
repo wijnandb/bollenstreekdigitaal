@@ -1,0 +1,142 @@
+---
+import Base from "../layouts/Base.astro";
+import CTA from "../components/CTA.astro";
+
+const cases = [
+  {
+    company: "Bloembollenkwekerij Van der Veldt",
+    location: "Lisse",
+    sector: "Sierteelt",
+    challenge: "Handmatige orderverwerking kostte 15 uur per week. Bestellingen kwamen via e-mail, telefoon en WhatsApp binnen en moesten stuk voor stuk worden overgetypt in het voorraadsysteem.",
+    solution: "Geautomatiseerde orderverwerking die binnenkomende bestellingen uit alle kanalen samenbrengt en direct in het systeem zet. Inclusief automatische voorraadcontrole en orderbevestiging.",
+    results: ["Orderverwerking van 15 naar 3 uur per week", "60% minder fouten in bestellingen", "Klanten krijgen binnen 5 minuten bevestiging"],
+    quote: "We hadden nooit gedacht dat het zo snel verschil zou maken. De eerste week al merkten we hoeveel rustiger het was.",
+    person: "Peter van der Veldt, eigenaar",
+  },
+  {
+    company: "Administratiekantoor Kuiper & Zn",
+    location: "Katwijk",
+    sector: "Financieel",
+    challenge: "Medewerkers beantwoordden dagelijks dezelfde vragen van klanten: deadlines, benodigde documenten, status van aangiftes. Dit kostte het team gemiddeld 2 uur per dag.",
+    solution: "Een interne kennisbank met gestandaardiseerde antwoorden, gekoppeld aan een eenvoudige AI-assistent die klanten direct de juiste informatie geeft via de website.",
+    results: ["Klantvragen met 70% gereduceerd", "Team bespaart 8 uur per week", "Klanttevredenheid gestegen (meer snelheid, minder wachten)"],
+    quote: "Het mooie is dat we niet minder service leveren, maar juist m\u00e9\u00e9r. De klant krijgt sneller antwoord en wij hebben meer tijd voor echt advieswerk.",
+    person: "Sandra Kuiper, directeur",
+  },
+  {
+    company: "Bouwbedrijf De Rijn",
+    location: "Noordwijk",
+    sector: "Bouw",
+    challenge: "Projectinformatie stond verspreid over e-mail, Excel en papieren dossiers. Fouten in offertes kwamen regelmatig voor en kostten gemiddeld \u20AC2.000 per fout.",
+    solution: "Centraal projectmanagementsysteem met templates voor offertes en werkbonnen. AI-controle op veelgemaakte fouten voordat offertes de deur uitgaan.",
+    results: ["Fouten in offertes gedaald van 12% naar 2%", "Offertes 3x sneller opgesteld", "Alle projectinfo op \u00e9\u00e9n plek, toegankelijk voor het hele team"],
+    quote: "Vroeger waren we een uur bezig met een offerte en zaten er nog fouten in. Nu is het een kwartiertje en klopt het gewoon.",
+    person: "Mark de Jong, projectleider",
+  },
+  {
+    company: "Strandpaviljoen Zilt",
+    location: "Noordwijk aan Zee",
+    sector: "Horeca",
+    challenge: "De website was verouderd, niet mobiel-vriendelijk en werd niet gevonden op Google. Bijna alle reserveringen kwamen via telefoon, wat in het hoogseizoen voor gemiste boekingen zorgde.",
+    solution: "Nieuwe, snelle website met online reserveringssysteem, geoptimaliseerd voor lokale zoektermen. Koppeling met Google Business Profile.",
+    results: ["Online reserveringen gestegen met 300%", "Website laadtijd van 6 naar 0.8 seconden", "Nr. 2 in Google voor 'strandpaviljoen Noordwijk'"],
+    quote: "In het hoogseizoen misten we reserveringen omdat de telefoon bezet was. Dat probleem bestaat nu niet meer.",
+    person: "Lisa Vermeer, eigenaar",
+  },
+];
+---
+
+<Base
+  title="Resultaten"
+  description="Bekijk hoe MKB-bedrijven in de Bollenstreek concreet resultaat boeken met AI en digitale transformatie."
+>
+  <section class="py-20">
+    <div class="mx-auto max-w-5xl px-6">
+      <h1
+        class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white"
+      >
+        Resultaten
+      </h1>
+      <p class="mt-4 max-w-2xl text-lg text-gray-600 dark:text-gray-300">
+        Concrete resultaten van bedrijven in de Bollenstreek die met onze hulp
+        slimmer zijn gaan werken.
+      </p>
+
+      <!-- Numbers -->
+      <div class="mt-12 grid gap-6 sm:grid-cols-4">
+        <div class="rounded-xl border border-gray-200 bg-white p-6 text-center dark:border-gray-700 dark:bg-gray-800">
+          <div class="text-3xl font-bold text-primary-600 dark:text-primary-400">25+</div>
+          <div class="mt-1 text-sm text-gray-600 dark:text-gray-300">Bedrijven geholpen</div>
+        </div>
+        <div class="rounded-xl border border-gray-200 bg-white p-6 text-center dark:border-gray-700 dark:bg-gray-800">
+          <div class="text-3xl font-bold text-primary-600 dark:text-primary-400">4.9/5</div>
+          <div class="mt-1 text-sm text-gray-600 dark:text-gray-300">Klanttevredenheid</div>
+        </div>
+        <div class="rounded-xl border border-gray-200 bg-white p-6 text-center dark:border-gray-700 dark:bg-gray-800">
+          <div class="text-3xl font-bold text-primary-600 dark:text-primary-400">12 uur</div>
+          <div class="mt-1 text-sm text-gray-600 dark:text-gray-300">Gem. bespaard per week</div>
+        </div>
+        <div class="rounded-xl border border-gray-200 bg-white p-6 text-center dark:border-gray-700 dark:bg-gray-800">
+          <div class="text-3xl font-bold text-primary-600 dark:text-primary-400">100%</div>
+          <div class="mt-1 text-sm text-gray-600 dark:text-gray-300">Zou ons aanbevelen</div>
+        </div>
+      </div>
+
+      <!-- Cases -->
+      <div class="mt-16 space-y-12">
+        {
+          cases.map((c) => (
+            <div class="rounded-2xl border border-gray-200 bg-white p-8 dark:border-gray-700 dark:bg-gray-800">
+              <div class="flex flex-wrap items-center gap-3">
+                <h2 class="text-xl font-bold text-gray-900 dark:text-white">
+                  {c.company}
+                </h2>
+                <span class="rounded-full bg-primary-100 px-3 py-0.5 text-xs font-medium text-primary-700 dark:bg-primary-900/50 dark:text-primary-300">
+                  {c.sector}
+                </span>
+                <span class="text-sm text-gray-500 dark:text-gray-400">
+                  {c.location}
+                </span>
+              </div>
+
+              <div class="mt-6 grid gap-6 md:grid-cols-3">
+                <div>
+                  <h3 class="text-sm font-semibold text-gray-500 dark:text-gray-400">Uitdaging</h3>
+                  <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">{c.challenge}</p>
+                </div>
+                <div>
+                  <h3 class="text-sm font-semibold text-gray-500 dark:text-gray-400">Aanpak</h3>
+                  <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">{c.solution}</p>
+                </div>
+                <div>
+                  <h3 class="text-sm font-semibold text-gray-500 dark:text-gray-400">Resultaat</h3>
+                  <ul class="mt-2 space-y-1">
+                    {c.results.map((r) => (
+                      <li class="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-300">
+                        <svg class="mt-0.5 h-4 w-4 shrink-0 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        {r}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <blockquote class="mt-6 border-l-4 border-accent-400 pl-4">
+                <p class="italic text-gray-600 dark:text-gray-300">"{c.quote}"</p>
+                <cite class="mt-2 block text-sm font-medium text-gray-500 dark:text-gray-400 not-italic">&mdash; {c.person}</cite>
+              </blockquote>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    heading="Benieuwd wat wij voor jouw bedrijf kunnen betekenen?"
+    description="Elk resultaat hierboven begon met een gesprek. Plan de jouwe en ontdek waar de kansen liggen."
+    buttonText="Plan een kennismaking"
+  />
+</Base>

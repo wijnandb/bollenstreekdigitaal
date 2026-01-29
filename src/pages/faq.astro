@@ -1,0 +1,85 @@
+---
+import Base from "../layouts/Base.astro";
+import CTA from "../components/CTA.astro";
+
+const faqs = [
+  {
+    q: "Is dit alleen voor bedrijven die al iets met AI doen?",
+    a: "Nee. Juist niet. De meeste bedrijven die we helpen hebben nog geen ervaring met AI. We beginnen bij het proces, niet bij de tool.",
+  },
+  {
+    q: "Wat kost een kennismaking?",
+    a: "Niets. Het eerste gesprek is gratis. We kijken samen waar de kansen liggen en wat de logische eerste stap zou zijn.",
+  },
+  {
+    q: "Moet ik direct aan de slag met nieuwe software?",
+    a: "Nee. Soms is een simpele procesaanpassing effectiever dan nieuwe tools. Wij adviseren alleen technologie als het echt waarde toevoegt.",
+  },
+  {
+    q: "Hoe snel zie ik resultaat?",
+    a: "De eerste verbeteringen zijn vaak binnen een paar weken merkbaar. Een workshop levert direct nieuwe inzichten op. Adviestrajecten resulteren binnen 4-6 weken in concrete aanbevelingen.",
+  },
+  {
+    q: "Werken jullie alleen in de Bollenstreek?",
+    a: "We zijn gevestigd in Noordwijk en werken het meest met ondernemers in de regio: Katwijk, Leiden, Lisse, Hillegom en omgeving. Maar we helpen ook bedrijven daarbuiten, zeker als het om advies of workshops gaat.",
+  },
+  {
+    q: "Wat als AI niet de oplossing blijkt te zijn?",
+    a: "Dan zeggen we dat. Het gaat ons om het resultaat, niet om de technologie. Soms is een betere workflow, een checklist of een eenvoudiger systeem de beste oplossing.",
+  },
+  {
+    q: "Zijn jullie een IT-bedrijf?",
+    a: "Niet in de traditionele zin. Wij bouwen geen servers of netwerken. Wij helpen ondernemers om slim gebruik te maken van AI en digitale tools, afgestemd op hun bedrijfsprocessen.",
+  },
+  {
+    q: "Kan ik mijn team laten trainen?",
+    a: "Ja. We geven workshops op maat, van een halve dag introductie tot meerdaagse trajecten. Altijd afgestemd op de sector en het kennisniveau van je team.",
+  },
+  {
+    q: "Wat zijn de kosten van een traject?",
+    a: "Dat hangt af van de scope. Een workshop begint vanaf \u20AC950, een adviestraject vanaf \u20AC1.500. Bekijk onze <a href='/tarieven/' class='text-primary-600 underline hover:text-primary-700 dark:text-primary-400'>tarievenpagina</a> voor richtprijzen.",
+  },
+  {
+    q: "Hoe werkt de gratis AI-scan?",
+    a: "Je beantwoordt 6 korte vragen over je bedrijfsprocessen. Op basis daarvan krijg je direct inzicht in waar de kansen liggen. <a href='/ai-scan/' class='text-primary-600 underline hover:text-primary-700 dark:text-primary-400'>Doe de scan hier</a>.",
+  },
+];
+---
+
+<Base
+  title="Veelgestelde vragen"
+  description="Antwoorden op veelgestelde vragen over AI-advies, workshops en digitale transformatie voor MKB-bedrijven."
+>
+  <section class="py-20">
+    <div class="mx-auto max-w-3xl px-6">
+      <h1
+        class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white"
+      >
+        Veelgestelde vragen
+      </h1>
+      <p class="mt-4 text-lg text-gray-600 dark:text-gray-300">
+        De belangrijkste vragen die ondernemers ons stellen, helder
+        beantwoord.
+      </p>
+
+      <div class="mt-12 space-y-6">
+        {
+          faqs.map((faq) => (
+            <div class="rounded-xl border border-gray-200 bg-white p-6 dark:border-gray-700 dark:bg-gray-900">
+              <h2 class="text-lg font-semibold text-gray-900 dark:text-white">
+                {faq.q}
+              </h2>
+              <p class="mt-2 text-gray-600 dark:text-gray-300" set:html={faq.a} />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    heading="Staat je vraag er niet bij?"
+    description="Neem contact op. We antwoorden altijd persoonlijk, meestal binnen een werkdag."
+    buttonText="Stel je vraag"
+  />
+</Base>
