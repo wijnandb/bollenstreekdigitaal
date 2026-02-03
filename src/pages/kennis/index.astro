@@ -1,0 +1,331 @@
+---
+import Base from "../../layouts/Base.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
+import CTA from "../../components/CTA.astro";
+
+const categories = [
+  {
+    title: "CRM-systemen",
+    description:
+      "Klantgegevens, verkoopkansen en contactmomenten centraal beheren. Geen losse spreadsheets meer.",
+    stat: "15-30% hogere omzet bij CRM-gebruik",
+    icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z",
+    tools: "HubSpot, Zoho, Pipedrive",
+    href: "/blog/crm-voor-mkb/",
+  },
+  {
+    title: "Boekings- en planningssoftware",
+    description:
+      "Laat klanten zelf afspraken inplannen via je website. 24/7, zonder telefoontjes.",
+    stat: "30-50% minder no-shows door automatische herinneringen",
+    icon: "M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z",
+    tools: "Calendly, SimplyBook.me, Reservio",
+    href: "/blog/boekingssoftware-mkb/",
+  },
+  {
+    title: "Livechat en chatbots",
+    description:
+      "Beantwoord vragen automatisch, ook buiten kantooruren. Vang leads op die anders verloren gaan.",
+    stat: "64% van consumenten vertrouwt AI-agents met menselijke eigenschappen",
+    icon: "M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z",
+    tools: "Tidio, tawk.to, Chatbase",
+    href: "/blog/chatbots-voor-mkb/",
+  },
+  {
+    title: "SEO en marketingtools",
+    description:
+      "Hoger in Google verschijnen. Vooral lokaal: 'bloemist Lisse' of 'restaurant Noordwijk'.",
+    stat: "93% van online ervaringen begint bij een zoekmachine",
+    icon: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z",
+    tools: "Google Search Console, Ubersuggest, SE Ranking",
+    href: "/blog/seo-voor-mkb/",
+  },
+  {
+    title: "Social media management",
+    description:
+      "Berichten inplannen, op meerdere platforms tegelijk publiceren en resultaten meten.",
+    stat: "5-10 uur per week besparen op handmatig posten",
+    icon: "M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z",
+    tools: "Buffer, Later, Meta Business Suite",
+    href: "/blog/social-media-mkb/",
+  },
+  {
+    title: "Facturatie en boekhouding",
+    description:
+      "Facturen maken, btw-aangifte voorbereiden en inzicht in je cashflow. Zonder Excel.",
+    stat: "2-5 uur per week besparen op handmatig factureren",
+    icon: "M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z",
+    tools: "e-Boekhouden, Moneybird, Jortt",
+    href: "/blog/boekhoudsoftware-mkb/",
+  },
+  {
+    title: "Projectmanagement",
+    description:
+      "Taken verdelen, voortgang bijhouden en als team overzicht houden. Geen losse WhatsApp-berichten meer.",
+    stat: "Projecten lopen minder uit door centraal overzicht",
+    icon: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4",
+    tools: "Trello, Asana, Notion",
+    href: "/blog/projectmanagement-mkb/",
+  },
+  {
+    title: "AI-tools voor productiviteit",
+    description:
+      "Repetitieve taken automatiseren, content genereren en processen stroomlijnen met AI.",
+    stat: "68% van het MKB zet nog geen AI in",
+    icon: "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z",
+    tools: "ChatGPT, Claude, Zapier, Make",
+    href: "/blog/ai-voor-mkb/",
+  },
+  {
+    title: "E-commerce",
+    description:
+      "Online verkopen via je eigen webshop. Bloemen, bollen, streekproducten — 24/7 bereikbaar.",
+    stat: "Online verkopen groeit jaarlijks, klanten verwachten het",
+    icon: "M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z",
+    tools: "Shopify, WooCommerce, Mijnwebwinkel",
+    href: "/blog/webshop-mkb/",
+  },
+  {
+    title: "Email marketing",
+    description:
+      "Nieuwsbrieven versturen, leads opvolgen en seizoenscampagnes automatiseren.",
+    stat: "€36 retour per bestede €1 — hoogste ROI van alle kanalen",
+    icon: "M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z",
+    tools: "Brevo, MailerLite, MailBlue",
+    href: "/blog/email-marketing-mkb/",
+  },
+  {
+    title: "Analytics en rapportage",
+    description:
+      "Websitebezoek meten, gedrag begrijpen en campagnes bijsturen op basis van data.",
+    stat: "Zonder data neem je beslissingen op gevoel",
+    icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z",
+    tools: "Plausible, Google Analytics, Matomo",
+    href: "/blog/analytics-mkb/",
+  },
+  {
+    title: "Documentbeheer en automatisering",
+    description:
+      "Documenten centraal opslaan, samenwerken en bedrijfsprocessen automatiseren.",
+    stat: "Handmatige processen kosten uren per week",
+    icon: "M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z",
+    tools: "Google Workspace, Microsoft 365, Notion",
+    href: "/blog/documentbeheer-mkb/",
+  },
+];
+---
+
+<Base
+  title="Kennis — Digitale tools voor het MKB"
+  description="Ontdek welke digitale tools jouw bedrijf verder helpen. Praktische uitleg over CRM, AI, boekhouding, SEO en meer — speciaal voor MKB in de Bollenstreek."
+>
+  <Breadcrumb items={[
+    { label: "Home", href: "/" },
+    { label: "Kennis" },
+  ]} />
+
+  <section class="py-20">
+    <div class="mx-auto max-w-5xl px-6">
+      <h1 class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
+        Digitale gereedschapskist
+      </h1>
+      <p class="mt-4 max-w-2xl text-lg text-gray-600 dark:text-gray-300">
+        Het MKB laat kansen liggen. 68% zet nog geen AI in, en 70% van de aangeschafte
+        CRM-systemen blijft onderbenut. Niet omdat de tools er niet zijn, maar omdat
+        kennis en begeleiding ontbreken. Hier vind je per categorie wat er mogelijk is.
+      </p>
+
+      <div class="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          categories.map((cat) => (
+            <div class="group rounded-xl border border-gray-200 bg-white p-6 transition-all hover:-translate-y-0.5 hover:shadow-lg dark:border-gray-700 dark:bg-gray-900">
+              <div class="flex items-center gap-3">
+                <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary-100 dark:bg-primary-900">
+                  <svg
+                    class="h-5 w-5 text-primary-600 dark:text-primary-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d={cat.icon}
+                    />
+                  </svg>
+                </div>
+                <h2 class="text-lg font-bold text-gray-900 dark:text-white">
+                  {cat.title}
+                </h2>
+              </div>
+
+              <p class="mt-3 text-sm text-gray-600 dark:text-gray-300">
+                {cat.description}
+              </p>
+
+              <p class="mt-3 text-xs font-medium text-primary-600 dark:text-primary-400">
+                {cat.stat}
+              </p>
+
+              <p class="mt-4 text-xs text-gray-500 dark:text-gray-400">
+                <span class="font-medium">Tools:</span> {cat.tools}
+              </p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Fasering -->
+  <section class="border-t border-gray-100 bg-gray-50 py-20 dark:border-gray-800 dark:bg-gray-900">
+    <div class="mx-auto max-w-5xl px-6">
+      <h2 class="text-center text-2xl font-bold text-gray-900 dark:text-white">
+        Waar begin je?
+      </h2>
+      <p class="mx-auto mt-4 max-w-2xl text-center text-gray-600 dark:text-gray-300">
+        Niet alles tegelijk. De meeste MKB-bedrijven zijn het best geholpen met deze volgorde:
+      </p>
+
+      <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {
+          [
+            {
+              fase: "Fase 1",
+              title: "Basis op orde",
+              items: [
+                "Google Business Profile",
+                "Boekhoudsoftware",
+                "Website analytics",
+              ],
+            },
+            {
+              fase: "Fase 2",
+              title: "Klantcontact",
+              items: [
+                "CRM opzetten",
+                "Online boekingssysteem",
+                "E-mail opt-in",
+              ],
+            },
+            {
+              fase: "Fase 3",
+              title: "Groei",
+              items: [
+                "SEO-optimalisatie",
+                "Email marketing",
+                "Social media strategie",
+              ],
+            },
+            {
+              fase: "Fase 4",
+              title: "Slimmer werken",
+              items: [
+                "AI-tools inzetten",
+                "Procesautomatisering",
+                "Chatbot of webshop",
+              ],
+            },
+          ].map((phase) => (
+            <div class="rounded-xl border border-gray-200 bg-white p-5 dark:border-gray-700 dark:bg-gray-800">
+              <span class="text-xs font-semibold uppercase tracking-wider text-primary-600 dark:text-primary-400">
+                {phase.fase}
+              </span>
+              <h3 class="mt-1 text-lg font-bold text-gray-900 dark:text-white">
+                {phase.title}
+              </h3>
+              <ul class="mt-3 space-y-2">
+                {phase.items.map((item) => (
+                  <li class="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-300">
+                    <svg
+                      class="mt-0.5 h-4 w-4 shrink-0 text-primary-600 dark:text-primary-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Kostenindicatie -->
+  <section class="py-20">
+    <div class="mx-auto max-w-5xl px-6">
+      <h2 class="text-center text-2xl font-bold text-gray-900 dark:text-white">
+        Wat kost het?
+      </h2>
+      <p class="mx-auto mt-4 max-w-2xl text-center text-gray-600 dark:text-gray-300">
+        De meeste tools zijn gratis of zeer betaalbaar. De echte investering zit in het goed inrichten.
+      </p>
+
+      <div class="mt-12 grid gap-6 sm:grid-cols-3">
+        {
+          [
+            {
+              type: "ZZP / micro",
+              size: "1-2 personen",
+              tools: "€0 – 50/maand",
+              setup: "€500 – 2.000",
+              saving: "5-10 uur/week",
+            },
+            {
+              type: "Klein MKB",
+              size: "3-10 personen",
+              tools: "€50 – 200/maand",
+              setup: "€2.000 – 5.000",
+              saving: "10-20 uur/week",
+            },
+            {
+              type: "Middelgroot MKB",
+              size: "10-50 personen",
+              tools: "€200 – 800/maand",
+              setup: "€5.000 – 15.000",
+              saving: "20-40 uur/week",
+            },
+          ].map((tier) => (
+            <div class="rounded-xl border border-gray-200 bg-white p-6 dark:border-gray-700 dark:bg-gray-900">
+              <h3 class="text-lg font-bold text-gray-900 dark:text-white">
+                {tier.type}
+              </h3>
+              <p class="text-sm text-gray-500 dark:text-gray-400">{tier.size}</p>
+              <dl class="mt-4 space-y-3">
+                <div>
+                  <dt class="text-xs font-medium uppercase tracking-wider text-gray-500 dark:text-gray-400">Toolkosten</dt>
+                  <dd class="text-sm font-semibold text-gray-900 dark:text-white">{tier.tools}</dd>
+                </div>
+                <div>
+                  <dt class="text-xs font-medium uppercase tracking-wider text-gray-500 dark:text-gray-400">Eenmalige setup</dt>
+                  <dd class="text-sm font-semibold text-gray-900 dark:text-white">{tier.setup}</dd>
+                </div>
+                <div>
+                  <dt class="text-xs font-medium uppercase tracking-wider text-gray-500 dark:text-gray-400">Verwachte tijdsbesparing</dt>
+                  <dd class="text-sm font-semibold text-primary-600 dark:text-primary-400">{tier.saving}</dd>
+                </div>
+              </dl>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    heading="Weten welke tools bij jouw bedrijf passen?"
+    description="We helpen je de juiste keuze maken. Geen standaardpakket, maar advies dat past bij jouw werkwijze en budget."
+    buttonText="Plan een gesprek"
+  />
+</Base>

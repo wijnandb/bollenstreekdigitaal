@@ -55,7 +55,7 @@ import Breadcrumb from "../../components/Breadcrumb.astro";
               <svg class="mt-1 h-5 w-5 shrink-0 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
               </svg>
-              <span><strong class="text-gray-900 dark:text-white">Begeleiding bij implementatie</strong> &mdash; Hulp bij het kiezen, inrichten en testen van de juiste tools en workflows.</span>
+              <span><strong class="text-gray-900 dark:text-white">Begeleiding bij implementatie</strong> &mdash; Hulp bij het kiezen en inrichten van de juiste tools &mdash; van CRM-systemen als HubSpot tot automatisering met Zapier of Make.</span>
             </li>
             <li class="flex items-start gap-3 text-gray-600 dark:text-gray-300">
               <svg class="mt-1 h-5 w-5 shrink-0 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -92,6 +92,31 @@ import Breadcrumb from "../../components/Breadcrumb.astro";
               <span><strong class="text-gray-900 dark:text-white">Evaluatie</strong> &mdash; Na een afgesproken periode meten we het effect en sturen we bij.</span>
             </li>
           </ol>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
+            Tools die we implementeren
+          </h2>
+          <p class="mt-3 text-gray-600 dark:text-gray-300">
+            We werken met bewezen, betaalbare tools die passen bij het MKB. Denk aan:
+          </p>
+          <div class="mt-4 grid gap-3 sm:grid-cols-2">
+            {[
+              { category: "CRM", tools: "HubSpot, Zoho, Pipedrive" },
+              { category: "Boekingen", tools: "Calendly, SimplyBook.me" },
+              { category: "Boekhouding", tools: "Moneybird, e-Boekhouden" },
+              { category: "Automatisering", tools: "Zapier, Make, n8n" },
+            ].map((item) => (
+              <div class="rounded-lg border border-gray-200 bg-gray-50 px-4 py-3 dark:border-gray-700 dark:bg-gray-800">
+                <span class="text-xs font-semibold uppercase tracking-wider text-primary-600 dark:text-primary-400">{item.category}</span>
+                <p class="mt-1 text-sm text-gray-700 dark:text-gray-300">{item.tools}</p>
+              </div>
+            ))}
+          </div>
+          <p class="mt-4 text-sm text-gray-500 dark:text-gray-400">
+            Meer weten over welke tools bij jouw bedrijf passen? Bekijk onze <a href="/kennis/" class="text-primary-600 underline hover:text-primary-700 dark:text-primary-400">digitale gereedschapskist</a>.
+          </p>
         </div>
       </div>
     </div>

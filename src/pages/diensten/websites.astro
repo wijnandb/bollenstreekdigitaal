@@ -75,7 +75,7 @@ import Breadcrumb from "../../components/Breadcrumb.astro";
               <svg class="mt-1 h-5 w-5 shrink-0 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
               </svg>
-              <span><strong class="text-gray-900 dark:text-white">Meetbaar</strong> &mdash; Analytics en inzicht in wat werkt. Zodat je kunt bijsturen op basis van feiten, niet op gevoel.</span>
+              <span><strong class="text-gray-900 dark:text-white">Meetbaar</strong> &mdash; Privacy-vriendelijke analytics (zoals Plausible of Matomo) geven inzicht in wat werkt. Bijsturen op feiten, niet op gevoel.</span>
             </li>
             <li class="flex items-start gap-3 text-gray-600 dark:text-gray-300">
               <svg class="mt-1 h-5 w-5 shrink-0 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -112,6 +112,33 @@ import Breadcrumb from "../../components/Breadcrumb.astro";
               <span><strong class="text-gray-900 dark:text-white">Optimalisatie</strong> &mdash; Na livegang meten we het resultaat en verbeteren we waar nodig. Continu beter, niet eenmalig klaar.</span>
             </li>
           </ol>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
+            Integraties die we meebouwen
+          </h2>
+          <p class="mt-3 text-gray-600 dark:text-gray-300">
+            Een website staat niet op zichzelf. We koppelen het aan de tools die jouw bedrijf nodig heeft:
+          </p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            {[
+              "Online boekingssysteem",
+              "Livechat of chatbot",
+              "Contactformulier",
+              "Email marketing",
+              "Google Analytics / Plausible",
+              "SEO-optimalisatie",
+              "Webshop (Shopify)",
+            ].map((item) => (
+              <span class="rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-sm text-gray-700 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-300">
+                {item}
+              </span>
+            ))}
+          </div>
+          <p class="mt-4 text-sm text-gray-500 dark:text-gray-400">
+            Meer weten over welke tools er bestaan? Bekijk onze <a href="/kennis/" class="text-primary-600 underline hover:text-primary-700 dark:text-primary-400">digitale gereedschapskist</a>.
+          </p>
         </div>
       </div>
     </div>
