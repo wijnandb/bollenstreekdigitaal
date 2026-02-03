@@ -56,6 +56,13 @@
       >
         Doe de gratis AI-scan
       </a>
+      <button
+        id="nee-bedankt"
+        type="button"
+        class="text-xs text-gray-400 transition-colors hover:text-gray-600 dark:text-gray-500 dark:hover:text-gray-300 sm:self-center"
+      >
+        Nee bedankt
+      </button>
     </div>
   </div>
 
@@ -115,5 +122,99 @@
 
       tick();
     }
+  </script>
+
+  <script>
+    import Matter from "matter-js";
+
+    const btn = document.getElementById("nee-bedankt");
+
+    btn?.addEventListener("click", () => {
+      const { Engine, Bodies, Composite, Body } = Matter;
+
+      // Grab all visible elements, then filter to only "leaf" nodes
+      // (elements that don't contain other matched elements)
+      const selectors = "h1, h2, h3, h4, p, a, li, ul, ol, img, svg, div, nav, button, form, input, span, section, header, footer";
+      const all = Array.from(document.querySelectorAll(selectors)).filter((el) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.width <= 10 || rect.height <= 10 || rect.bottom <= 0 || rect.top >= window.innerHeight) return false;
+        const pos = window.getComputedStyle(el).position;
+        if (pos === "fixed" || pos === "sticky") return false;
+        return true;
+      }) as HTMLElement[];
+
+      // Only take leaf elements — skip any element whose child is also in the set
+      const elSet = new Set(all);
+      const leaves = all.filter((el) => {
+        for (const child of el.children) {
+          if (elSet.has(child as HTMLElement)) return false;
+        }
+        return true;
+      });
+
+      const engine = Engine.create({ gravity: { x: 0, y: 1 } });
+      const items: { el: HTMLElement; body: Matter.Body }[] = [];
+
+      for (const el of leaves) {
+        const rect = el.getBoundingClientRect();
+
+        el.style.position = "fixed";
+        el.style.left = rect.left + "px";
+        el.style.top = rect.top + "px";
+        el.style.width = rect.width + "px";
+        el.style.height = rect.height + "px";
+        el.style.margin = "0";
+        el.style.zIndex = "40";
+        el.style.pointerEvents = "none";
+
+        const body = Bodies.rectangle(
+          rect.left + rect.width / 2,
+          rect.top + rect.height / 2,
+          rect.width,
+          rect.height,
+          {
+            friction: 0.3,
+            restitution: 0.2,
+            density: 0.001,
+            frictionAir: 0.01,
+          }
+        );
+
+        Body.setVelocity(body, {
+          x: (Math.random() - 0.5) * 2,
+          y: 0,
+        });
+
+        items.push({ el, body });
+        Composite.add(engine.world, body);
+      }
+
+      // Floor at viewport bottom, walls at edges
+      const thickness = 60;
+      Composite.add(engine.world, [
+        Bodies.rectangle(window.innerWidth / 2, window.innerHeight + thickness / 2, window.innerWidth * 3, thickness, { isStatic: true }),
+        Bodies.rectangle(-thickness / 2, window.innerHeight / 2, thickness, window.innerHeight * 4, { isStatic: true }),
+        Bodies.rectangle(window.innerWidth + thickness / 2, window.innerHeight / 2, thickness, window.innerHeight * 4, { isStatic: true }),
+      ]);
+
+      document.documentElement.style.overflow = "hidden";
+      document.body.style.overflow = "hidden";
+
+      function animate() {
+        Engine.update(engine, 1000 / 60);
+
+        for (const { el, body } of items) {
+          const w = parseFloat(el.style.width);
+          const h = parseFloat(el.style.height);
+          el.style.left = body.position.x - w / 2 + "px";
+          el.style.top = body.position.y - h / 2 + "px";
+          el.style.transform = `rotate(${body.angle}rad)`;
+        }
+
+        requestAnimationFrame(animate);
+      }
+
+      animate();
+    });
   </script>
 </section>
