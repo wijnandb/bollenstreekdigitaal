@@ -50,7 +50,7 @@ Trigger: "Laten we een blogpost schrijven" or just give a topic.
 ## Open / Future Items
 
 ### Needs Wijnand's Action
-- [ ] Add `SENDGRID_API_KEY` to `.env` and Vercel environment variables
+- [x] Add `SENDGRID_API_KEY` to `.env` and Vercel environment variables
 - [ ] Verify `bollenstreekdigitaal.nl` as sender domain in SendGrid
 - [ ] Set up LinkedIn company page, then add link to website footer
 - [ ] Set up Google Business Profile (Google Places)
@@ -91,4 +91,7 @@ Trigger: "Laten we een blogpost schrijven" or just give a topic.
 | Advies | Quickscan €1.500, Adviestraject €3.500, Begeleid vanaf €750/mo |
 | Strategie | Digitale Scan €2.500, Strategietraject €4.950, Begeleiding €995/mo |
 
-Idea: when we add a button: "Nee bedankt", kan we have the whole site (text and images) 
+---
+
+Uitbreidingen:
+
