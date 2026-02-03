@@ -1,5 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
 import CTA from "../components/CTA.astro";
 ---
 
@@ -7,6 +8,11 @@ import CTA from "../components/CTA.astro";
   title="Gratis AI-scan"
   description="Gratis AI-scan voor ondernemers in de Bollenstreek. Beantwoord 6 korte vragen en ontdek direct waar kansen liggen."
 >
+  <Breadcrumb items={[
+    { label: "Home", href: "/" },
+    { label: "Gratis AI-scan" },
+  ]} />
+
   <section class="py-20">
     <div class="mx-auto max-w-3xl px-6">
       <h1

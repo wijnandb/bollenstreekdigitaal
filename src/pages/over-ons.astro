@@ -1,5 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
 import CTA from "../components/CTA.astro";
 ---
 
@@ -7,6 +8,11 @@ import CTA from "../components/CTA.astro";
   title="Over ons"
   description="Bollenstreek Digitaal helpt MKB-bedrijven in de Duin- en Bollenstreek met AI en digitale transformatie."
 >
+  <Breadcrumb items={[
+    { label: "Home", href: "/" },
+    { label: "Over ons" },
+  ]} />
+
   <section class="py-20">
     <div class="mx-auto max-w-3xl px-6">
       <h1

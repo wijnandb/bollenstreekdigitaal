@@ -1,5 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
 import ContactForm from "../components/ContactForm.astro";
 ---
 
@@ -7,6 +8,11 @@ import ContactForm from "../components/ContactForm.astro";
   title="Contact"
   description="Neem contact op met Bollenstreek Digitaal. Plan een gesprek over AI en digitale transformatie voor jouw bedrijf."
 >
+  <Breadcrumb items={[
+    { label: "Home", href: "/" },
+    { label: "Contact" },
+  ]} />
+
   <section class="py-20">
     <div class="mx-auto max-w-5xl px-6">
       <div class="grid gap-16 lg:grid-cols-5">

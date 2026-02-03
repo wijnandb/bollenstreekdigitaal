@@ -33,7 +33,10 @@
       <span class="bg-gradient-to-r from-primary-600 to-primary-400 bg-clip-text text-transparent dark:from-primary-400 dark:to-primary-200">in de Bollenstreek.</span><br />
       Met AI die bij je past.
     </h1>
-    <p class="mt-6 max-w-2xl text-lg text-gray-600 dark:text-gray-300">
+    <p class="mt-6 text-lg text-gray-500 dark:text-gray-400">
+      Voor jou als <span id="typewriter" class="font-semibold text-primary-600 dark:text-primary-400"></span><span id="typewriter-cursor" class="animate-blink text-primary-600 dark:text-primary-400">|</span>
+    </p>
+    <p class="mt-4 max-w-2xl text-lg text-gray-600 dark:text-gray-300">
       Wij helpen ondernemers in de Duin- en Bollenstreek om knelpunten in hun werk
       zichtbaar te maken en slimmer op te lossen. Concreet, meetbaar en op jouw tempo.
     </p>
@@ -55,4 +58,62 @@
       </a>
     </div>
   </div>
+
+  <style>
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    .animate-blink {
+      animation: blink 0.7s step-end infinite;
+    }
+  </style>
+
+  <script>
+    const words = [
+      "schilder",
+      "bloemist",
+      "timmerman",
+      "horecaondernemer",
+      "makelaar",
+      "aannemer",
+      "installateur",
+      "kapper",
+      "fysiotherapeut",
+      "accountant",
+    ];
+
+    const el = document.getElementById("typewriter");
+    if (el) {
+      let wordIndex = 0;
+      let charIndex = 0;
+      let deleting = false;
+
+      function tick() {
+        const word = words[wordIndex];
+        if (!deleting) {
+          charIndex++;
+          el.textContent = word.slice(0, charIndex);
+          if (charIndex === word.length) {
+            deleting = true;
+            setTimeout(tick, 2000);
+            return;
+          }
+          setTimeout(tick, 80);
+        } else {
+          charIndex--;
+          el.textContent = word.slice(0, charIndex);
+          if (charIndex === 0) {
+            deleting = false;
+            wordIndex = (wordIndex + 1) % words.length;
+            setTimeout(tick, 400);
+            return;
+          }
+          setTimeout(tick, 40);
+        }
+      }
+
+      tick();
+    }
+  </script>
 </section>

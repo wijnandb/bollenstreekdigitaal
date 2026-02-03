@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "test": "npx playwright test",
+    "test:ui": "npx playwright test --ui"
   },
   "overrides": {
     "path-to-regexp": "^6.3.0"
@@ -14,9 +16,13 @@
     "@astrojs/mdx": "^4.3.0",
     "@astrojs/sitemap": "^3.3.0",
     "@astrojs/vercel": "^9.0.4",
+    "@sendgrid/mail": "^8.1.6",
     "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.1.0",
     "astro": "^5.7.0",
     "tailwindcss": "^4.1.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.1"
   }
 }
