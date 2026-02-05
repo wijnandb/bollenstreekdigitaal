@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 
 const pages = [
-  { path: "/", title: "Bollenstreek Digitaal", h1: false },
+  { path: "/", title: "AI & Digitaal Advies", h1: false },
   { path: "/diensten/", title: "Diensten", h1: "Diensten" },
   { path: "/diensten/workshops/", title: "Workshops", h1: "Workshops & trainingen" },
   { path: "/diensten/advies/", title: "Advies", h1: "Advies & implementatie" },
@@ -17,6 +17,8 @@ const pages = [
   { path: "/faq/", title: "Veelgestelde vragen", h1: "Veelgestelde vragen" },
   { path: "/contact/", title: "Contact", h1: "Contact" },
   { path: "/ai-scan/", title: "AI-scan", h1: false },
+  { path: "/privacybeleid/", title: "Privacybeleid", h1: "Privacybeleid" },
+  { path: "/algemene-voorwaarden/", title: "Algemene voorwaarden", h1: "Algemene voorwaarden" },
 ];
 
 for (const page of pages) {
@@ -99,6 +101,14 @@ test("footer has contact info", async ({ page }) => {
   await expect(footer).toContainText("Bollenstreek Digitaal");
   await expect(footer).toContainText("Gooweg 14");
   await expect(footer).toContainText("071");
+});
+
+test("footer has KvK and legal links", async ({ page }) => {
+  await page.goto("/");
+  const footer = page.locator("footer");
+  await expect(footer).toContainText("KvK 76903885");
+  await expect(footer.locator('a[href="/privacybeleid/"]')).toBeVisible();
+  await expect(footer.locator('a[href="/algemene-voorwaarden/"]')).toBeVisible();
 });
 
 test("CTA section is visually distinct from footer", async ({ page }) => {
