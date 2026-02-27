@@ -1,0 +1,148 @@
+---
+import Base from "../../layouts/Base.astro";
+import CTA from "../../components/CTA.astro";
+
+const plans = [
+  {
+    name: "Basis",
+    description: "Perfect voor kleine ondernemers die online zichtbaar willen zijn.",
+    monthlyPrice: 39,
+    setupPrice: 449,
+    features: [
+      "Professionele website",
+      "Mobiel-vriendelijk design",
+      "SSL-certificaat",
+      "Basis SEO-optimalisatie",
+      "Contactformulier",
+    ],
+  },
+  {
+    name: "Professioneel",
+    description: "Voor bedrijven die meer willen en sneller willen groeien.",
+    monthlyPrice: 59,
+    setupPrice: 495,
+    featured: true,
+    features: [
+      "Alles van Basis",
+      "Uitgebreide SEO-optimalisatie",
+      "Google Analytics integratie",
+      "Meerdere pagina's",
+      "Blog functionaliteit",
+      "Prioriteit support",
+    ],
+  },
+  {
+    name: "Groei",
+    description: "Complete oplossing voor ambitieuze ondernemers.",
+    monthlyPrice: 99,
+    setupPrice: 1799,
+    features: [
+      "Alles van Professioneel",
+      "Maatwerk functionaliteiten",
+      "E-commerce mogelijkheden",
+      "Geavanceerde integraties",
+      "Maandelijkse rapportages",
+      "Dedicated accountmanager",
+    ],
+  },
+];
+---
+
+<Base
+  title="Website Tarieven"
+  description="Transparante tarieven voor professionele websites. Kies het pakket dat bij jouw bedrijf past."
+>
+  <section class="py-20">
+    <div class="mx-auto max-w-5xl px-6">
+      <div class="text-center">
+        <h1 class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
+          Website Tarieven
+        </h1>
+        <p class="mt-4 text-lg text-gray-600 dark:text-gray-300">
+          Transparante prijzen, geen verrassingen. Kies het pakket dat bij jouw bedrijf past.
+        </p>
+      </div>
+
+      <div class="mt-16 grid gap-8 lg:grid-cols-3">
+        {
+          plans.map((plan) => (
+            <div
+              class:list={[
+                "relative rounded-2xl border p-8",
+                plan.featured
+                  ? "border-primary-500 bg-primary-50 dark:border-primary-400 dark:bg-primary-900/20"
+                  : "border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-800",
+              ]}
+            >
+              {plan.featured && (
+                <span class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-primary-600 px-4 py-1 text-sm font-medium text-white">
+                  Populair
+                </span>
+              )}
+              <div class="text-center">
+                <h2 class="text-xl font-bold text-gray-900 dark:text-white">
+                  {plan.name}
+                </h2>
+                <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">
+                  {plan.description}
+                </p>
+                <div class="mt-6">
+                  <span class="text-4xl font-bold text-gray-900 dark:text-white">
+                    &euro;{plan.monthlyPrice}
+                  </span>
+                  <span class="text-gray-600 dark:text-gray-300">/maand</span>
+                </div>
+                <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
+                  &euro;{plan.setupPrice},- eenmalige opstart
+                </p>
+              </div>
+              <ul class="mt-8 space-y-4">
+                {plan.features.map((feature) => (
+                  <li class="flex items-start gap-3 text-sm text-gray-600 dark:text-gray-300">
+                    <svg
+                      class="mt-0.5 h-5 w-5 shrink-0 text-primary-600 dark:text-primary-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              <a
+                href="/contact"
+                class:list={[
+                  "mt-8 block w-full rounded-lg py-3 text-center font-medium transition-colors",
+                  plan.featured
+                    ? "bg-primary-600 text-white hover:bg-primary-700"
+                    : "bg-gray-100 text-gray-900 hover:bg-gray-200 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600",
+                ]}
+              >
+                Neem contact op
+              </a>
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="mt-16 text-center">
+        <p class="text-gray-600 dark:text-gray-300">
+          Niet zeker welk pakket het beste bij je past?
+          <a href="/contact" class="text-primary-600 hover:underline dark:text-primary-400">
+            Neem contact op
+          </a>
+          voor een vrijblijvend adviesgesprek.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <CTA />
+</Base>
