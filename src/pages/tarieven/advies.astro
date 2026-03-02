@@ -1,0 +1,194 @@
+---
+import Base from "../../layouts/Base.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
+import CTA from "../../components/CTA.astro";
+---
+
+<Base
+  title="Tarieven Advies & Implementatie"
+  description="Tarieven voor AI-advies en implementatie. Van quickscan tot volledig begeleid traject. Praktisch en resultaatgericht."
+>
+  <Breadcrumb items={[
+    { label: "Home", href: "/" },
+    { label: "Tarieven", href: "/tarieven/" },
+    { label: "Advies & implementatie" },
+  ]} />
+
+  <section class="py-20">
+    <div class="mx-auto max-w-5xl px-6">
+      <div class="mx-auto max-w-3xl text-center">
+        <h1 class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl">
+          Advies & implementatie
+        </h1>
+        <p class="mt-6 text-lg text-gray-600 dark:text-gray-300">
+          Praktisch advies dat leidt tot meetbaar resultaat. Van een korte quickscan
+          tot een volledig begeleid implementatietraject.
+        </p>
+        <a
+          href="/diensten/advies/"
+          class="mt-4 inline-flex items-center gap-1 text-sm text-primary-600 transition-colors hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
+        >
+          Meer over advies & implementatie
+          <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+        </a>
+      </div>
+
+      <div class="mt-16 grid gap-8 lg:grid-cols-3">
+        <!-- Quickscan -->
+        <div class="flex flex-col rounded-2xl border border-gray-200 bg-white p-8 dark:border-gray-700 dark:bg-gray-800">
+          <h2 class="text-lg font-semibold text-gray-900 dark:text-white">
+            Quickscan
+          </h2>
+          <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">
+            Eenmalig &middot; 1&ndash;2 weken
+          </p>
+          <div class="mt-6">
+            <span class="text-4xl font-bold text-gray-900 dark:text-white">&euro;1.500</span>
+          </div>
+          <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">
+            eenmalig, excl. BTW
+          </p>
+
+          <ul class="mt-8 flex-1 space-y-3 text-sm text-gray-600 dark:text-gray-300">
+            <li class="flex items-start gap-2">
+              <svg class="mt-0.5 h-4 w-4 shrink-0 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              Intake-gesprek (1&ndash;2 uur)
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="mt-0.5 h-4 w-4 shrink-0 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              Analyse van 2&ndash;3 kernprocessen
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="mt-0.5 h-4 w-4 shrink-0 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              Rapport met top-3 kansen
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="mt-0.5 h-4 w-4 shrink-0 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              Concrete aanbevelingen per kans
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="mt-0.5 h-4 w-4 shrink-0 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              Presentatie van bevindingen
+            </li>
+          </ul>
+
+          <a
+            href="/contact/"
+            class="mt-8 inline-flex w-full items-center justify-center rounded-lg border border-primary-600 px-6 py-3 text-sm font-semibold text-primary-600 transition-colors hover:bg-primary-50 dark:border-primary-400 dark:text-primary-400 dark:hover:bg-primary-900/20"
+          >
+            Quickscan aanvragen
+          </a>
+        </div>
+
+        <!-- Adviestraject (highlighted) -->
+        <div class="relative flex flex-col rounded-2xl border-2 border-primary-600 bg-white p-8 shadow-lg dark:border-primary-400 dark:bg-gray-800">
+          <div class="absolute -top-3 left-6 rounded-full bg-primary-600 px-3 py-0.5 text-xs font-semibold text-white dark:bg-primary-400 dark:text-gray-900">
+            Meest gekozen
+          </div>
+          <h2 class="text-lg font-semibold text-gray-900 dark:text-white">
+            Adviestraject
+          </h2>
+          <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">
+            4&ndash;6 weken doorlooptijd
+          </p>
+          <div class="mt-6">
+            <span class="text-4xl font-bold text-gray-900 dark:text-white">&euro;3.500</span>
+          </div>
+          <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">
+            eenmalig, excl. BTW
+          </p>
+
+          <ul class="mt-8 flex-1 space-y-3 text-sm text-gray-600 dark:text-gray-300">
+            <li class="flex items-start gap-2">
+              <svg class="mt-0.5 h-4 w-4 shrink-0 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              <strong class="text-gray-900 dark:text-white">Alles van Quickscan, plus:</strong>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="mt-0.5 h-4 w-4 shrink-0 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              Uitgebreide procesanalyse met betrokkenen
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="mt-0.5 h-4 w-4 shrink-0 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              Tool-selectie en proof of concept
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="mt-0.5 h-4 w-4 shrink-0 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              Implementatieplan met tijdlijn
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="mt-0.5 h-4 w-4 shrink-0 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              Begeleiding bij eerste implementatie
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="mt-0.5 h-4 w-4 shrink-0 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              Evaluatie na 4 weken
+            </li>
+          </ul>
+
+          <a
+            href="/contact/"
+            class="mt-8 inline-flex w-full items-center justify-center rounded-lg bg-primary-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-primary-700"
+          >
+            Adviestraject starten
+          </a>
+        </div>
+
+        <!-- Volledig begeleid -->
+        <div class="flex flex-col rounded-2xl border border-gray-200 bg-white p-8 dark:border-gray-700 dark:bg-gray-800">
+          <h2 class="text-lg font-semibold text-gray-900 dark:text-white">
+            Volledig Begeleid
+          </h2>
+          <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">
+            3&ndash;6 maanden doorlooptijd
+          </p>
+          <div class="mt-6">
+            <span class="text-3xl font-bold text-gray-900 dark:text-white">Op maat</span>
+          </div>
+          <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">
+            vanaf &euro;750/maand, excl. BTW
+          </p>
+
+          <ul class="mt-8 flex-1 space-y-3 text-sm text-gray-600 dark:text-gray-300">
+            <li class="flex items-start gap-2">
+              <svg class="mt-0.5 h-4 w-4 shrink-0 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              <strong class="text-gray-900 dark:text-white">Alles van Adviestraject, plus:</strong>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="mt-0.5 h-4 w-4 shrink-0 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              Volledige implementatie en configuratie
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="mt-0.5 h-4 w-4 shrink-0 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              Training van medewerkers
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="mt-0.5 h-4 w-4 shrink-0 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              Maandelijkse check-ins en bijsturing
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="mt-0.5 h-4 w-4 shrink-0 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              Doorlopende ondersteuning via e-mail en telefoon
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="mt-0.5 h-4 w-4 shrink-0 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              Resultaatmeting en rapportage
+            </li>
+          </ul>
+
+          <a
+            href="/contact/"
+            class="mt-8 inline-flex w-full items-center justify-center rounded-lg border border-primary-600 px-6 py-3 text-sm font-semibold text-primary-600 transition-colors hover:bg-primary-50 dark:border-primary-400 dark:text-primary-400 dark:hover:bg-primary-900/20"
+          >
+            Bespreek de mogelijkheden
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    heading="Weten waar de kansen liggen?"
+    description="Plan een kennismaking. We brengen samen in kaart waar AI het meeste verschil maakt."
+    buttonText="Plan een kennismaking"
+  />
+</Base>

@@ -1,0 +1,118 @@
+---
+import Base from "../layouts/Base.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+
+const breadcrumbItems = [{ label: "Privacybeleid" }];
+---
+
+<Base
+  title="Privacybeleid"
+  description="Hoe Bollenstreek Digitaal omgaat met je persoonsgegevens. Lees ons privacybeleid."
+>
+  <Breadcrumb items={breadcrumbItems} />
+
+  <section class="py-16">
+    <div class="mx-auto max-w-3xl px-6">
+      <h1 class="text-4xl font-bold text-gray-900 dark:text-white">Privacybeleid</h1>
+      <p class="mt-4 text-gray-600 dark:text-gray-300">Laatst bijgewerkt: februari 2026</p>
+
+      <div class="prose prose-lg mt-8 dark:prose-invert max-w-none">
+        <h2>1. Wie zijn wij?</h2>
+        <p>
+          Bollenstreek Digitaal is een handelsnaam van Perceptum B.V., gevestigd aan de Gooweg 14,
+          2203 AB Noordwijk en ingeschreven bij de Kamer van Koophandel onder nummer <strong>76903885</strong>.
+          Perceptum B.V. is verantwoordelijk voor de verwerking van persoonsgegevens zoals weergegeven
+          in dit privacybeleid.
+        </p>
+        <p>
+          <strong>Contactgegevens:</strong><br />
+          Perceptum B.V. h.o.d.n. Bollenstreek Digitaal<br />
+          Gooweg 14<br />
+          2203 AB Noordwijk<br />
+          Tel: 071 - 203 2103<br />
+          E-mail: <a href="mailto:contact@bollenstreekdigitaal.nl">contact@bollenstreekdigitaal.nl</a>
+        </p>
+
+        <h2>2. Welke gegevens verzamelen wij?</h2>
+        <p>Wij verzamelen alleen gegevens die je zelf aan ons verstrekt:</p>
+        <ul>
+          <li><strong>Contactformulier:</strong> naam, e-mailadres, telefoonnummer (optioneel), je bericht</li>
+          <li><strong>Nieuwsbrief:</strong> e-mailadres</li>
+          <li><strong>Zakelijke relatie:</strong> bedrijfsnaam, contactgegevens, factuurgegevens</li>
+        </ul>
+
+        <h2>3. Waarvoor gebruiken wij je gegevens?</h2>
+        <p>Wij verwerken je persoonsgegevens voor de volgende doelen:</p>
+        <ul>
+          <li>Het beantwoorden van je vragen via het contactformulier</li>
+          <li>Het versturen van onze nieuwsbrief (alleen met jouw toestemming)</li>
+          <li>Het uitvoeren van onze dienstverlening</li>
+          <li>Het verzenden van facturen</li>
+        </ul>
+
+        <h2>4. Hoe lang bewaren wij je gegevens?</h2>
+        <p>
+          Wij bewaren je persoonsgegevens niet langer dan strikt nodig is:
+        </p>
+        <ul>
+          <li><strong>Contactformulier:</strong> maximaal 1 jaar na laatste contact</li>
+          <li><strong>Nieuwsbrief:</strong> tot je je uitschrijft</li>
+          <li><strong>Factuurgegevens:</strong> 7 jaar (wettelijke bewaarplicht)</li>
+        </ul>
+
+        <h2>5. Delen met derden</h2>
+        <p>
+          Wij verkopen je gegevens nooit aan derden. Wij delen gegevens alleen met:
+        </p>
+        <ul>
+          <li><strong>EmailOctopus:</strong> voor het versturen van nieuwsbrieven</li>
+          <li><strong>SendGrid:</strong> voor het versturen van e-mailnotificaties</li>
+          <li><strong>Vercel:</strong> hosting van deze website</li>
+        </ul>
+        <p>
+          Deze partijen verwerken gegevens alleen in onze opdracht en mogen ze niet voor eigen doelen gebruiken.
+        </p>
+
+        <h2>6. Cookies</h2>
+        <p>
+          Deze website gebruikt geen tracking cookies en plaatst geen cookies van derden voor
+          advertentiedoeleinden. Wij gebruiken alleen functionele cookies die noodzakelijk zijn
+          voor het functioneren van de website (zoals het onthouden van je voorkeur voor dark mode).
+        </p>
+
+        <h2>7. Je rechten</h2>
+        <p>Je hebt het recht om:</p>
+        <ul>
+          <li>Je gegevens in te zien, te corrigeren of te laten verwijderen</li>
+          <li>Je toestemming in te trekken</li>
+          <li>Bezwaar te maken tegen de verwerking</li>
+          <li>Je gegevens over te laten dragen (dataportabiliteit)</li>
+        </ul>
+        <p>
+          Voor deze verzoeken kun je contact opnemen via
+          <a href="mailto:contact@bollenstreekdigitaal.nl">contact@bollenstreekdigitaal.nl</a>.
+          We reageren binnen 30 dagen.
+        </p>
+
+        <h2>8. Beveiliging</h2>
+        <p>
+          Wij nemen de bescherming van je gegevens serieus. We hebben passende technische en
+          organisatorische maatregelen genomen om misbruik, verlies en ongeautoriseerde toegang
+          te voorkomen. Deze website maakt gebruik van een beveiligde verbinding (HTTPS).
+        </p>
+
+        <h2>9. Klachten</h2>
+        <p>
+          Heb je een klacht over hoe wij met je gegevens omgaan? Neem dan eerst contact met ons op.
+          Je hebt ook het recht om een klacht in te dienen bij de Autoriteit Persoonsgegevens:
+          <a href="https://autoriteitpersoonsgegevens.nl" target="_blank" rel="noopener noreferrer">autoriteitpersoonsgegevens.nl</a>
+        </p>
+
+        <h2>10. Wijzigingen</h2>
+        <p>
+          Dit privacybeleid kan worden aangepast. De meest recente versie vind je altijd op deze pagina.
+        </p>
+      </div>
+    </div>
+  </section>
+</Base>

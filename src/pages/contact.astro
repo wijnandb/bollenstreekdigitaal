@@ -1,12 +1,18 @@
 ---
 import Base from "../layouts/Base.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
 import ContactForm from "../components/ContactForm.astro";
 ---
 
 <Base
   title="Contact"
-  description="Neem contact op met Bollenstreek Digitaal voor een vrijblijvend gesprek over AI en digitale transformatie."
+  description="Neem contact op met Bollenstreek Digitaal. Plan een gesprek over AI en digitale transformatie voor jouw bedrijf."
 >
+  <Breadcrumb items={[
+    { label: "Home", href: "/" },
+    { label: "Contact" },
+  ]} />
+
   <section class="py-20">
     <div class="mx-auto max-w-5xl px-6">
       <div class="grid gap-16 lg:grid-cols-5">
@@ -18,8 +24,7 @@ import ContactForm from "../components/ContactForm.astro";
           </h1>
           <p class="mt-4 text-lg text-gray-600 dark:text-gray-300">
             Wil je weten wat AI voor jouw bedrijf kan betekenen? Laat je
-            gegevens achter en wij nemen contact met je op voor een vrijblijvend
-            gesprek.
+            gegevens achter en wij nemen binnen een werkdag contact met je op.
           </p>
 
           <div class="mt-8 space-y-4">
@@ -75,11 +80,41 @@ import ContactForm from "../components/ContactForm.astro";
                 <p
                   class="text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  Regio
+                  Adres
                 </p>
                 <p class="text-sm text-gray-600 dark:text-gray-300">
-                  Duin- en Bollenstreek, Zuid-Holland
+                  Gooweg 14<br />
+                  2203 AB Noordwijk
                 </p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <svg
+                class="mt-1 h-5 w-5 shrink-0 text-primary-600 dark:text-primary-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                ></path>
+              </svg>
+              <div>
+                <p
+                  class="text-sm font-medium text-gray-900 dark:text-white"
+                >
+                  Telefoon
+                </p>
+                <a
+                  href="tel:+31712032103"
+                  class="text-sm text-primary-600 transition-colors hover:text-primary-700 dark:text-primary-400"
+                >
+                  071 - 203 2103
+                </a>
               </div>
             </div>
           </div>

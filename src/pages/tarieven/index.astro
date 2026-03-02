@@ -1,0 +1,147 @@
+---
+import Base from "../../layouts/Base.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
+import CTA from "../../components/CTA.astro";
+
+const diensten = [
+  {
+    title: "Websites die converteren",
+    href: "/tarieven/websites/",
+    description: "Professionele website, volledig ontzorgd. Hosting, onderhoud en updates inbegrepen.",
+    pricing: "Vanaf €29/maand",
+    highlight: true,
+    icon: "M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z",
+  },
+  {
+    title: "Workshops & trainingen",
+    href: "/tarieven/workshops/",
+    description: "Interactieve sessies over AI en digitale tools. Op maat voor jouw team en branche.",
+    pricing: "Vanaf €950",
+    highlight: false,
+    icon: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253",
+  },
+  {
+    title: "Advies & implementatie",
+    href: "/tarieven/advies/",
+    description: "Van procesanalyse tot concrete oplossing. Praktisch advies met meetbaar resultaat.",
+    pricing: "Vanaf €1.500",
+    highlight: false,
+    icon: "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z",
+  },
+  {
+    title: "Strategie & transformatie",
+    href: "/tarieven/strategie/",
+    description: "Digitale strategie op maat. Van scan tot langetermijnplan met doorlopende begeleiding.",
+    pricing: "Vanaf €2.500",
+    highlight: false,
+    icon: "M13 7h8m0 0v8m0-8l-8 8-4-4-6 6",
+  },
+];
+---
+
+<Base
+  title="Tarieven"
+  description="Transparante tarieven voor websites, workshops, advies en digitale strategie. Voor MKB-bedrijven in de Bollenstreek."
+>
+  <Breadcrumb items={[
+    { label: "Home", href: "/" },
+    { label: "Tarieven" },
+  ]} />
+
+  <section class="py-20">
+    <div class="mx-auto max-w-5xl px-6">
+      <div class="mx-auto max-w-3xl text-center">
+        <h1 class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl">
+          Tarieven
+        </h1>
+        <p class="mt-6 text-lg text-gray-600 dark:text-gray-300">
+          Transparante prijzen, geen verrassingen. Kies de dienst die bij je past
+          en bekijk wat het kost.
+        </p>
+      </div>
+
+      <div class="mt-16 grid gap-8 sm:grid-cols-2">
+        {diensten.map((dienst) => (
+          <a
+            href={dienst.href}
+            class:list={[
+              "group relative flex flex-col rounded-2xl border p-8 transition-all hover:-translate-y-1 hover:shadow-lg",
+              dienst.highlight
+                ? "border-primary-600 bg-white shadow-md dark:border-primary-400 dark:bg-gray-800"
+                : "border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-800",
+            ]}
+          >
+            {dienst.highlight && (
+              <div class="absolute -top-3 left-6 rounded-full bg-primary-600 px-3 py-0.5 text-xs font-semibold text-white dark:bg-primary-400 dark:text-gray-900">
+                Populair
+              </div>
+            )}
+            <div class="flex items-center gap-4">
+              <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary-100 dark:bg-primary-900/30">
+                <svg class="h-6 w-6 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={dienst.icon} />
+                </svg>
+              </div>
+              <h2 class="text-xl font-bold text-gray-900 dark:text-white">{dienst.title}</h2>
+            </div>
+            <p class="mt-4 flex-1 text-sm text-gray-600 dark:text-gray-300">
+              {dienst.description}
+            </p>
+            <div class="mt-6 flex items-center justify-between">
+              <span class="text-lg font-bold text-primary-600 dark:text-primary-400">
+                {dienst.pricing}
+              </span>
+              <span class="inline-flex items-center text-sm font-medium text-primary-600 transition-colors group-hover:text-primary-700 dark:text-primary-400 dark:group-hover:text-primary-300">
+                Bekijk tarieven
+                <svg class="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <!-- Trust elements -->
+      <div class="mt-16 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-gray-500 dark:text-gray-400">
+        <span class="flex items-center gap-1.5">
+          <svg class="h-4 w-4 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+          Alle prijzen excl. BTW
+        </span>
+        <span class="flex items-center gap-1.5">
+          <svg class="h-4 w-4 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+          Eerste gesprek altijd gratis
+        </span>
+        <span class="flex items-center gap-1.5">
+          <svg class="h-4 w-4 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+          Lokaal &amp; persoonlijk
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Maatwerk note -->
+  <section class="border-t border-gray-100 bg-gray-50 py-16 dark:border-gray-800 dark:bg-gray-900">
+    <div class="mx-auto max-w-3xl px-6 text-center">
+      <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
+        Combinatie nodig?
+      </h2>
+      <p class="mt-4 text-gray-600 dark:text-gray-300">
+        Veel klanten combineren diensten. Een website met een adviestraject, of een
+        workshop gevolgd door implementatie. We stellen graag een pakket op maat samen.
+      </p>
+      <a
+        href="/contact/"
+        class="mt-8 inline-flex items-center justify-center rounded-lg bg-primary-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-primary-700"
+      >
+        Vraag een offerte op maat
+      </a>
+    </div>
+  </section>
+
+  <CTA
+    heading="Liever eerst even praten?"
+    description="Plan een gratis kennismaking. We bespreken je situatie en geven direct eerlijk advies."
+    buttonText="Plan een kennismaking"
+  />
+</Base>

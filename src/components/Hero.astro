@@ -1,27 +1,119 @@
-<section class="py-20 sm:py-28">
-  <div class="mx-auto max-w-5xl px-6">
+<section class="relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-accent-400/10 py-20 dark:from-gray-950 dark:via-gray-950 dark:to-primary-900/20 sm:py-28">
+  <!-- Decorative elements -->
+  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+    <div class="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-primary-200/30 blur-3xl dark:bg-primary-400/10"></div>
+    <div class="absolute -bottom-16 -left-16 h-64 w-64 rounded-full bg-accent-400/20 blur-3xl dark:bg-accent-500/10"></div>
+    <svg class="absolute right-10 top-1/4 hidden text-primary-200/40 dark:text-primary-700/20 lg:block" width="120" height="120" viewBox="0 0 120 120" fill="none">
+      <circle cx="10" cy="10" r="3" fill="currentColor" />
+      <circle cx="40" cy="10" r="3" fill="currentColor" />
+      <circle cx="70" cy="10" r="3" fill="currentColor" />
+      <circle cx="100" cy="10" r="3" fill="currentColor" />
+      <circle cx="10" cy="40" r="3" fill="currentColor" />
+      <circle cx="40" cy="40" r="3" fill="currentColor" />
+      <circle cx="70" cy="40" r="3" fill="currentColor" />
+      <circle cx="100" cy="40" r="3" fill="currentColor" />
+      <circle cx="10" cy="70" r="3" fill="currentColor" />
+      <circle cx="40" cy="70" r="3" fill="currentColor" />
+      <circle cx="70" cy="70" r="3" fill="currentColor" />
+      <circle cx="100" cy="70" r="3" fill="currentColor" />
+      <circle cx="10" cy="100" r="3" fill="currentColor" />
+      <circle cx="40" cy="100" r="3" fill="currentColor" />
+      <circle cx="70" cy="100" r="3" fill="currentColor" />
+      <circle cx="100" cy="100" r="3" fill="currentColor" />
+    </svg>
+  </div>
+
+  <div class="relative mx-auto max-w-5xl px-6">
+    <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-accent-400/30 bg-accent-400/10 px-4 py-1.5 text-sm font-medium text-accent-600 dark:border-accent-500/30 dark:bg-accent-500/10 dark:text-accent-400">
+      <span class="h-1.5 w-1.5 rounded-full bg-accent-500"></span>
+      AI-advies voor het MKB
+    </div>
     <h1 class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl lg:text-6xl">
-      Minder tijdverlies.<br />
-      <span class="text-primary-600 dark:text-primary-400">Meer rust.</span><br />
-      Slimmere processen.
+      Slimmer ondernemen<br />
+      <span class="bg-gradient-to-r from-primary-600 to-primary-400 bg-clip-text text-transparent dark:from-primary-400 dark:to-primary-200">in de Bollenstreek.</span><br />
+      Met AI die bij je past.
     </h1>
-    <p class="mt-6 max-w-2xl text-lg text-gray-600 dark:text-gray-300">
+    <p class="mt-6 text-lg text-gray-500 dark:text-gray-400">
+      Voor jou als <span id="typewriter" class="font-semibold text-primary-600 dark:text-primary-400"></span><span id="typewriter-cursor" class="animate-blink text-primary-600 dark:text-primary-400">|</span>
+    </p>
+    <p class="mt-4 max-w-2xl text-lg text-gray-600 dark:text-gray-300">
       Wij helpen ondernemers in de Duin- en Bollenstreek om knelpunten in hun werk
-      zichtbaar te maken en slimmer op te lossen. Zonder gedoe, met resultaat.
+      zichtbaar te maken en slimmer op te lossen. Concreet, meetbaar en op jouw tempo.
     </p>
     <div class="mt-10 flex flex-col gap-4 sm:flex-row">
       <a
         href="/contact/"
-        class="inline-flex items-center justify-center rounded-lg bg-primary-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+        class="inline-flex items-center justify-center rounded-lg bg-primary-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-primary-600/25 transition-all hover:bg-primary-700 hover:shadow-xl hover:shadow-primary-600/30 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
       >
         Plan een kennismaking
+        <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
       </a>
       <a
-        href="/diensten/"
-        class="inline-flex items-center justify-center rounded-lg border border-gray-300 bg-white px-6 py-3 text-sm font-semibold text-gray-700 shadow-sm transition-colors hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-200 dark:hover:bg-gray-800"
+        href="/ai-scan/"
+        class="inline-flex items-center justify-center rounded-lg border border-gray-300 bg-white px-6 py-3 text-sm font-semibold text-gray-700 shadow-sm transition-all hover:border-primary-300 hover:bg-gray-50 hover:text-primary-600 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-200 dark:hover:border-primary-700 dark:hover:bg-gray-800"
       >
-        Bekijk onze diensten
+        Doe de gratis AI-scan
       </a>
     </div>
   </div>
+
+  <style>
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    .animate-blink {
+      animation: blink 0.7s step-end infinite;
+    }
+  </style>
+
+  <script>
+    const words = [
+      "schilder",
+      "bloemist",
+      "timmerman",
+      "horecaondernemer",
+      "makelaar",
+      "aannemer",
+      "installateur",
+      "kapper",
+      "fysiotherapeut",
+      "accountant",
+    ];
+
+    const el = document.getElementById("typewriter");
+    if (el) {
+      let wordIndex = 0;
+      let charIndex = 0;
+      let deleting = false;
+
+      function tick() {
+        const word = words[wordIndex];
+        if (!deleting) {
+          charIndex++;
+          el.textContent = word.slice(0, charIndex);
+          if (charIndex === word.length) {
+            deleting = true;
+            setTimeout(tick, 2000);
+            return;
+          }
+          setTimeout(tick, 80);
+        } else {
+          charIndex--;
+          el.textContent = word.slice(0, charIndex);
+          if (charIndex === 0) {
+            deleting = false;
+            wordIndex = (wordIndex + 1) % words.length;
+            setTimeout(tick, 400);
+            return;
+          }
+          setTimeout(tick, 40);
+        }
+      }
+
+      tick();
+    }
+  </script>
 </section>

@@ -1,0 +1,191 @@
+---
+import Base from "../../layouts/Base.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
+import CTA from "../../components/CTA.astro";
+---
+
+<Base
+  title="Tarieven Strategie & Transformatie"
+  description="Tarieven voor digitale strategie en transformatie. Van scan tot langetermijnbegeleiding. Stap voor stap meer slagkracht."
+>
+  <Breadcrumb items={[
+    { label: "Home", href: "/" },
+    { label: "Tarieven", href: "/tarieven/" },
+    { label: "Strategie & transformatie" },
+  ]} />
+
+  <section class="py-20">
+    <div class="mx-auto max-w-5xl px-6">
+      <div class="mx-auto max-w-3xl text-center">
+        <h1 class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl">
+          Strategie & transformatie
+        </h1>
+        <p class="mt-6 text-lg text-gray-600 dark:text-gray-300">
+          Een helder plan voor de digitale toekomst van je bedrijf. Van scan tot
+          langetermijnbegeleiding, stap voor stap.
+        </p>
+        <a
+          href="/diensten/strategie/"
+          class="mt-4 inline-flex items-center gap-1 text-sm text-primary-600 transition-colors hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
+        >
+          Meer over strategie & transformatie
+          <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+        </a>
+      </div>
+
+      <div class="mt-16 grid gap-8 lg:grid-cols-3">
+        <!-- Digitale scan -->
+        <div class="flex flex-col rounded-2xl border border-gray-200 bg-white p-8 dark:border-gray-700 dark:bg-gray-800">
+          <h2 class="text-lg font-semibold text-gray-900 dark:text-white">
+            Digitale Scan
+          </h2>
+          <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">
+            Eenmalig &middot; 2&ndash;3 weken
+          </p>
+          <div class="mt-6">
+            <span class="text-4xl font-bold text-gray-900 dark:text-white">&euro;2.500</span>
+          </div>
+          <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">
+            eenmalig, excl. BTW
+          </p>
+
+          <ul class="mt-8 flex-1 space-y-3 text-sm text-gray-600 dark:text-gray-300">
+            <li class="flex items-start gap-2">
+              <svg class="mt-0.5 h-4 w-4 shrink-0 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              Digitale volwassenheidsscan
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="mt-0.5 h-4 w-4 shrink-0 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              Interviews met sleutelpersonen
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="mt-0.5 h-4 w-4 shrink-0 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              Analyse van processen en systemen
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="mt-0.5 h-4 w-4 shrink-0 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              Rapport met kansen en prioriteiten
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="mt-0.5 h-4 w-4 shrink-0 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              Presentatie en aanbevelingen
+            </li>
+          </ul>
+
+          <a
+            href="/contact/"
+            class="mt-8 inline-flex w-full items-center justify-center rounded-lg border border-primary-600 px-6 py-3 text-sm font-semibold text-primary-600 transition-colors hover:bg-primary-50 dark:border-primary-400 dark:text-primary-400 dark:hover:bg-primary-900/20"
+          >
+            Scan aanvragen
+          </a>
+        </div>
+
+        <!-- Strategietraject (highlighted) -->
+        <div class="relative flex flex-col rounded-2xl border-2 border-primary-600 bg-white p-8 shadow-lg dark:border-primary-400 dark:bg-gray-800">
+          <div class="absolute -top-3 left-6 rounded-full bg-primary-600 px-3 py-0.5 text-xs font-semibold text-white dark:bg-primary-400 dark:text-gray-900">
+            Meest gekozen
+          </div>
+          <h2 class="text-lg font-semibold text-gray-900 dark:text-white">
+            Strategietraject
+          </h2>
+          <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">
+            6&ndash;8 weken doorlooptijd
+          </p>
+          <div class="mt-6">
+            <span class="text-4xl font-bold text-gray-900 dark:text-white">&euro;4.950</span>
+          </div>
+          <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">
+            eenmalig, excl. BTW
+          </p>
+
+          <ul class="mt-8 flex-1 space-y-3 text-sm text-gray-600 dark:text-gray-300">
+            <li class="flex items-start gap-2">
+              <svg class="mt-0.5 h-4 w-4 shrink-0 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              <strong class="text-gray-900 dark:text-white">Alles van Digitale Scan, plus:</strong>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="mt-0.5 h-4 w-4 shrink-0 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              Strategisch plan op maat
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="mt-0.5 h-4 w-4 shrink-0 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              Roadmap met tijdlijn en budgetinschatting
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="mt-0.5 h-4 w-4 shrink-0 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              Begeleiding bij eerste initiatieven
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="mt-0.5 h-4 w-4 shrink-0 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              Workshop voor managementteam
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="mt-0.5 h-4 w-4 shrink-0 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              2 maanden nazorg
+            </li>
+          </ul>
+
+          <a
+            href="/contact/"
+            class="mt-8 inline-flex w-full items-center justify-center rounded-lg bg-primary-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-primary-700"
+          >
+            Strategietraject starten
+          </a>
+        </div>
+
+        <!-- Doorlopende begeleiding -->
+        <div class="flex flex-col rounded-2xl border border-gray-200 bg-white p-8 dark:border-gray-700 dark:bg-gray-800">
+          <h2 class="text-lg font-semibold text-gray-900 dark:text-white">
+            Doorlopende Begeleiding
+          </h2>
+          <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">
+            Maandelijks &middot; minimaal 6 maanden
+          </p>
+          <div class="mt-6">
+            <span class="text-4xl font-bold text-gray-900 dark:text-white">&euro;995</span>
+            <span class="text-sm text-gray-500 dark:text-gray-400">/maand</span>
+          </div>
+          <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">
+            excl. BTW
+          </p>
+
+          <ul class="mt-8 flex-1 space-y-3 text-sm text-gray-600 dark:text-gray-300">
+            <li class="flex items-start gap-2">
+              <svg class="mt-0.5 h-4 w-4 shrink-0 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              Maandelijkse strategiesessie
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="mt-0.5 h-4 w-4 shrink-0 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              Voortgangsbewaking op roadmap
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="mt-0.5 h-4 w-4 shrink-0 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              Sparringpartner voor digitale keuzes
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="mt-0.5 h-4 w-4 shrink-0 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              Kwartaalrapportage met resultaten
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="mt-0.5 h-4 w-4 shrink-0 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              Prioritaire ondersteuning via e-mail en telefoon
+            </li>
+          </ul>
+
+          <a
+            href="/contact/"
+            class="mt-8 inline-flex w-full items-center justify-center rounded-lg border border-primary-600 px-6 py-3 text-sm font-semibold text-primary-600 transition-colors hover:bg-primary-50 dark:border-primary-400 dark:text-primary-400 dark:hover:bg-primary-900/20"
+          >
+            Bespreek de mogelijkheden
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    heading="Klaar voor een digitale strategie die werkt?"
+    description="Begin met een ori&euml;ntatiegesprek. We kijken samen naar waar de meeste impact zit."
+    buttonText="Plan een ori&euml;ntatiegesprek"
+  />
+</Base>
