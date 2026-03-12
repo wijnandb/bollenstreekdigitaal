@@ -13,16 +13,26 @@
     "path-to-regexp": "^6.3.0"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.3.0",
-    "@astrojs/sitemap": "^3.3.0",
+    "@anthropic-ai/sdk": "^0.72.1",
+    "@astrojs/mdx": "^4.3.13",
+    "@astrojs/react": "^4.4.2",
+    "@astrojs/sitemap": "^3.7.0",
     "@astrojs/vercel": "^9.0.4",
+    "@libsql/client": "^0.17.0",
     "@sendgrid/mail": "^8.1.6",
     "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.1.0",
-    "astro": "^5.7.0",
+    "@vercel/analytics": "^1.6.1",
+    "astro": "^5.17.2",
+    "drizzle-orm": "^0.45.1",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
     "tailwindcss": "^4.1.0"
   },
   "devDependencies": {
-    "@playwright/test": "^1.58.1"
+    "@playwright/test": "^1.58.1",
+    "@types/react": "^19.2.10",
+    "@types/react-dom": "^19.2.3",
+    "dotenv": "^17.2.3"
   }
 }

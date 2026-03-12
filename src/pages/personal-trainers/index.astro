@@ -1,0 +1,592 @@
+---
+import Base from "../../layouts/Base.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
+import CTA from "../../components/CTA.astro";
+
+const painPoints = [
+  {
+    title: "Je agenda zit niet vol",
+    description: "Je weet dat je een goede trainer bent, maar nieuwe klanten vinden je niet. Ondertussen zie je collega's met volle agenda's.",
+    icon: "M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z",
+  },
+  {
+    title: "Je werkt 50 uur maar verdient voor 25",
+    description: "Administratie, social media, facturen najagen — de helft van je tijd gaat naar taken die geen geld opleveren.",
+    icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z",
+  },
+  {
+    title: "Klanten vertrekken na 3 maanden",
+    description: "Je investeert in de relatie, maar ze haken af. Geen progress tracking, geen accountability — geen reden om te blijven.",
+    icon: "M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1",
+  },
+];
+
+const tiers = [
+  {
+    name: "De Klantenmagneet",
+    tagline: "Word gevonden. Word geboekt.",
+    price: "197",
+    outcome: "5+ nieuwe klanten per maand",
+    totalValue: "6.750",
+    stack: [
+      { item: "Conversiegerichte PT-website", value: "2.500" },
+      { item: "Google-vindbaar in jouw regio (SEO)", value: "1.500" },
+      { item: "Online booking met automatische bevestiging", value: "750" },
+      { item: "Google Bedrijfsprofiel (volledig ingericht)", value: "500" },
+      { item: "WhatsApp/SMS herinneringen (geen no-shows)", value: "500" },
+      { item: "Mobiel-perfect design", value: "500" },
+    ],
+    bonuses: [
+      { item: "90-dagen contentkalender voor social media", value: "500" },
+      { item: "5 kant-en-klare Instagram templates", value: "250" },
+      { item: "No-show terugwin-scripts", value: "250" },
+    ],
+    cta: "Start Nu",
+    popular: false,
+  },
+  {
+    name: "Het Groei Systeem",
+    tagline: "Schaal naar 50+ klanten zonder chaos",
+    price: "347",
+    outcome: "€5.000+ extra omzet per maand",
+    totalValue: "12.500",
+    stack: [
+      { item: "Alles van De Klantenmagneet", value: "6.750" },
+      { item: "Automatische facturatie & incasso", value: "1.500" },
+      { item: "Klantportaal met eigen login", value: "1.250" },
+      { item: "Progress tracking (foto's, metingen)", value: "1.000" },
+      { item: "Chatbot voor 24/7 intake & FAQ", value: "1.000" },
+      { item: "Wachtlijst-systeem", value: "500" },
+    ],
+    bonuses: [
+      { item: "Klant-onboarding email sequentie (7 dagen)", value: "750" },
+      { item: "Retentie-playbook: houd klanten 12+ maanden", value: "500" },
+      { item: "Maandelijkse strategiecall (30 min)", value: "300" },
+    ],
+    cta: "Kies Het Groei Systeem",
+    popular: true,
+  },
+  {
+    name: "De PT Vrijheid Machine",
+    tagline: "Run je business in 10 uur per week",
+    price: "597",
+    outcome: "20+ uur per week terug + premium positionering",
+    totalValue: "22.500",
+    stack: [
+      { item: "Alles van Het Groei Systeem", value: "12.500" },
+      { item: "Eigen branded client app", value: "5.000" },
+      { item: "Workout & voedingslog in de app", value: "1.500" },
+      { item: "Push notifications voor sessies & motivatie", value: "750" },
+      { item: "In-app chat met klanten", value: "750" },
+      { item: "Progress dashboards voor klanten", value: "1.000" },
+      { item: "Automatische programma-aanpassingen", value: "1.000" },
+    ],
+    bonuses: [
+      { item: "White-label app (jouw naam, jouw logo)", value: "2.500" },
+      { item: "Premium pricing strategie sessie", value: "500" },
+      { item: "VIP support (24u respons)", value: "unlimited" },
+    ],
+    cta: "Word Vrij",
+    popular: false,
+  },
+];
+
+const guarantee = {
+  headline: "De 5-Klanten-of-Gratis Garantie",
+  description: "Als je binnen 90 dagen niet minimaal 5 nieuwe klanten hebt geboekt via je nieuwe systeem, krijg je je volledige investering terug. Geen vragen, geen gedoe. Wij nemen het risico — niet jij.",
+};
+
+const scarcity = {
+  spots: 3,
+  reason: "We werken intensief met elke PT. Om kwaliteit te garanderen nemen we maximaal 3 nieuwe klanten per maand aan.",
+};
+
+const steps = [
+  {
+    title: "Gratis Strategiegesprek",
+    time: "30 min",
+    description: "We analyseren je huidige situatie en laten zien hoeveel klanten je laat liggen. Geen verkooppraatje — concrete cijfers.",
+  },
+  {
+    title: "Jouw Groeiplan",
+    time: "48 uur",
+    description: "Je ontvangt een plan op maat: welk systeem past bij jou, wat het kost, en wat het oplevert. Zwart op wit.",
+  },
+  {
+    title: "Wij Bouwen, Jij Traint",
+    time: "2-3 weken",
+    description: "Wij bouwen alles. Jij levert alleen foto's en basis-info aan. Binnen 3 weken sta je live.",
+  },
+  {
+    title: "Klanten Stromen Binnen",
+    time: "Dag 1 live",
+    description: "Je systeem werkt 24/7. Klanten vinden je, boeken zelf, betalen automatisch. Jij focust op trainen.",
+  },
+];
+---
+
+<Base
+  title="Het PT Groei Systeem — Volgeboekte Agenda in 90 Dagen"
+  description="Van lege plekken naar wachtlijst. Het bewezen systeem voor personal trainers die meer klanten willen zonder meer te werken. 5 klanten in 90 dagen of gratis."
+>
+  <Breadcrumb items={[
+    { label: "Home", href: "/" },
+    { label: "Personal Trainers" },
+  ]} />
+
+  <!-- Hero Section - Outcome Focused -->
+  <section class="relative overflow-hidden py-20 lg:py-28">
+    <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+      <div class="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-primary-100/50 blur-3xl dark:bg-primary-900/30"></div>
+      <div class="absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-accent-100/50 blur-3xl dark:bg-accent-900/30"></div>
+    </div>
+
+    <div class="relative mx-auto max-w-5xl px-6">
+      <div class="mx-auto max-w-3xl text-center">
+        <!-- Scarcity Badge -->
+        <span class="inline-flex items-center gap-2 rounded-full bg-amber-100 px-4 py-1 text-sm font-medium text-amber-800 dark:bg-amber-900/50 dark:text-amber-200">
+          <span class="relative flex h-2 w-2">
+            <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-500 opacity-75"></span>
+            <span class="relative inline-flex h-2 w-2 rounded-full bg-amber-600"></span>
+          </span>
+          Nog {scarcity.spots} plekken beschikbaar deze maand
+        </span>
+
+        <h1 class="mt-6 text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl lg:text-6xl">
+          Van lege plekken naar<br />
+          <span class="text-primary-600 dark:text-primary-400">wachtlijst in 90 dagen</span>
+        </h1>
+
+        <p class="mt-6 text-lg text-gray-600 dark:text-gray-300 sm:text-xl">
+          Het bewezen systeem waarmee personal trainers in de Bollenstreek
+          <strong class="text-gray-900 dark:text-white">5+ nieuwe klanten per maand</strong> aantrekken —
+          zonder social media-stress, zonder facturen najagen, zonder 50-urige werkweken.
+        </p>
+
+        <!-- Outcome Stats -->
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm">
+          <div class="flex items-center gap-2">
+            <svg class="h-5 w-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <span class="text-gray-600 dark:text-gray-300">5+ nieuwe klanten/maand</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="h-5 w-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <span class="text-gray-600 dark:text-gray-300">20+ uur/week bespaard</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="h-5 w-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <span class="text-gray-600 dark:text-gray-300">90-dagen garantie</span>
+          </div>
+        </div>
+
+        <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <a
+            href="/contact/"
+            class="inline-flex items-center justify-center rounded-lg bg-primary-600 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-primary-600/25 transition-all hover:-translate-y-0.5 hover:bg-primary-700 hover:shadow-xl hover:shadow-primary-600/30"
+          >
+            Claim Jouw Gratis Strategiegesprek
+            <svg class="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+
+        <p class="mt-4 text-sm text-gray-500 dark:text-gray-400">
+          Gratis. Geen verplichting. 30 minuten die je business kunnen veranderen.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pain Agitation -->
+  <section class="border-t border-gray-100 bg-gray-50 py-20 dark:border-gray-800 dark:bg-gray-900">
+    <div class="mx-auto max-w-5xl px-6">
+      <div class="text-center">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white sm:text-3xl">
+          Herken je dit?
+        </h2>
+        <p class="mt-4 text-lg text-gray-600 dark:text-gray-300">
+          80% van de personal trainers verdient minder dan €40.000 per jaar.<br />
+          Niet door gebrek aan talent. Maar door deze drie problemen:
+        </p>
+      </div>
+
+      <div class="mt-12 grid gap-8 lg:grid-cols-3">
+        {painPoints.map((pain) => (
+          <div class="rounded-xl border-2 border-red-200 bg-white p-8 dark:border-red-900/50 dark:bg-gray-800">
+            <div class="flex h-14 w-14 items-center justify-center rounded-full bg-red-100 dark:bg-red-900/30">
+              <svg class="h-7 w-7 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={pain.icon} />
+              </svg>
+            </div>
+            <h3 class="mt-6 text-xl font-bold text-gray-900 dark:text-white">{pain.title}</h3>
+            <p class="mt-3 text-gray-600 dark:text-gray-400">{pain.description}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-12 text-center">
+        <p class="text-lg font-medium text-gray-900 dark:text-white">
+          Wat als je een systeem had dat dit allemaal voor je oplost?
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Solution - Value Stack -->
+  <section id="pakketten" class="py-20">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="text-center">
+        <span class="inline-flex items-center rounded-full bg-primary-100 px-4 py-1 text-sm font-medium text-primary-700 dark:bg-primary-900 dark:text-primary-300">
+          Kies Jouw Transformatie
+        </span>
+        <h2 class="mt-4 text-2xl font-bold text-gray-900 dark:text-white sm:text-3xl">
+          Drie Systemen. Eén Doel: Jouw Vrijheid.
+        </h2>
+        <p class="mt-4 text-gray-600 dark:text-gray-300">
+          Elk systeem is ontworpen voor een specifieke fase in je PT-journey.
+        </p>
+      </div>
+
+      <div class="mt-12 grid gap-8 lg:grid-cols-3">
+        {tiers.map((tier) => (
+          <div class={`relative flex flex-col rounded-2xl border-2 ${tier.popular ? 'border-primary-500 shadow-2xl shadow-primary-500/20' : 'border-gray-200 dark:border-gray-700'} bg-white dark:bg-gray-800`}>
+            {tier.popular && (
+              <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+                <span class="inline-flex items-center rounded-full bg-primary-600 px-4 py-1 text-xs font-bold uppercase tracking-wide text-white">
+                  Meest Gekozen
+                </span>
+              </div>
+            )}
+
+            <div class="p-8">
+              <!-- Header -->
+              <h3 class="text-2xl font-bold text-gray-900 dark:text-white">{tier.name}</h3>
+              <p class="mt-1 text-sm font-medium text-primary-600 dark:text-primary-400">{tier.tagline}</p>
+
+              <!-- Outcome -->
+              <div class="mt-4 rounded-lg bg-green-50 p-3 dark:bg-green-900/20">
+                <p class="text-sm font-medium text-green-800 dark:text-green-300">
+                  Resultaat: {tier.outcome}
+                </p>
+              </div>
+
+              <!-- Price -->
+              <div class="mt-6">
+                <div class="flex items-baseline gap-2">
+                  <span class="text-4xl font-bold text-gray-900 dark:text-white">€{tier.price}</span>
+                  <span class="text-gray-600 dark:text-gray-400">/maand</span>
+                </div>
+                <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">
+                  Totale waarde: <span class="line-through">€{tier.totalValue}</span>
+                </p>
+              </div>
+
+              <!-- Value Stack -->
+              <div class="mt-6">
+                <p class="text-xs font-bold uppercase tracking-wide text-gray-500 dark:text-gray-400">Wat je krijgt:</p>
+                <ul class="mt-3 space-y-3">
+                  {tier.stack.map((item) => (
+                    <li class="flex items-start gap-3">
+                      <svg class="mt-0.5 h-5 w-5 shrink-0 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <div class="flex flex-1 items-center justify-between text-sm">
+                        <span class="text-gray-700 dark:text-gray-300">{item.item}</span>
+                        <span class="ml-2 text-xs text-gray-400">(€{item.value})</span>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <!-- Bonuses -->
+              <div class="mt-6 rounded-lg border border-amber-200 bg-amber-50 p-4 dark:border-amber-800 dark:bg-amber-900/20">
+                <p class="text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-400">Bonussen (gratis erbij):</p>
+                <ul class="mt-3 space-y-2">
+                  {tier.bonuses.map((bonus) => (
+                    <li class="flex items-start gap-2 text-sm">
+                      <span class="text-amber-600 dark:text-amber-400">+</span>
+                      <span class="text-gray-700 dark:text-gray-300">{bonus.item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="mt-auto p-8 pt-0">
+              <a
+                href="/contact/"
+                class={`block w-full rounded-lg py-4 text-center text-sm font-bold transition-all ${
+                  tier.popular
+                    ? 'bg-primary-600 text-white shadow-lg shadow-primary-600/25 hover:-translate-y-0.5 hover:bg-primary-700'
+                    : 'border-2 border-gray-300 text-gray-700 hover:border-primary-500 hover:text-primary-600 dark:border-gray-600 dark:text-gray-200 dark:hover:border-primary-400 dark:hover:text-primary-400'
+                }`}
+              >
+                {tier.cta}
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <p class="mt-8 text-center text-sm text-gray-500 dark:text-gray-400">
+        Alle prijzen exclusief BTW. Inclusief {guarantee.headline.toLowerCase()}.
+      </p>
+    </div>
+  </section>
+
+  <!-- Hoe Dan!? Section -->
+  <section class="py-20">
+    <div class="mx-auto max-w-5xl px-6">
+      <div class="text-center">
+        <span class="inline-flex items-center rounded-full bg-amber-100 px-4 py-1 text-sm font-bold text-amber-800 dark:bg-amber-900/50 dark:text-amber-200">
+          Hoe dan!?
+        </span>
+        <h2 class="mt-4 text-2xl font-bold text-gray-900 dark:text-white sm:text-3xl">
+          Waarom dit werkt
+        </h2>
+        <p class="mt-4 text-gray-600 dark:text-gray-300">
+          Geen magie. Gewoon logica.
+        </p>
+      </div>
+
+      <!-- The Mechanism -->
+      <div class="mt-12 grid gap-4 md:grid-cols-5">
+        {[
+          { icon: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z", title: "Gevonden worden", desc: "Lokale SEO zorgt dat je bovenaan staat bij 'personal trainer Noordwijk'" },
+          { icon: "M15 12a3 3 0 11-6 0 3 3 0 016 0z", title: "Bezoekers", desc: "100+ mensen per maand zien je professionele website" },
+          { icon: "M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z", title: "Boekingen", desc: "5% boekt direct via je online systeem = 5 leads" },
+          { icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z", title: "Geen no-shows", desc: "Automatische herinneringen = iedereen komt opdagen" },
+          { icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z", title: "Klanten", desc: "60% wordt betalende klant = 3+ nieuwe klanten/maand" },
+        ].map((step, i) => (
+          <div class="relative text-center">
+            <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900/50">
+              <svg class="h-7 w-7 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={step.icon} />
+              </svg>
+            </div>
+            {i < 4 && (
+              <div class="absolute right-0 top-7 hidden h-0.5 w-full bg-gradient-to-r from-primary-200 to-primary-100 dark:from-primary-800 dark:to-primary-900 md:block" style="left: 60%; width: 80%;"></div>
+            )}
+            <h3 class="mt-4 text-sm font-bold text-gray-900 dark:text-white">{step.title}</h3>
+            <p class="mt-1 text-xs text-gray-600 dark:text-gray-400">{step.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <!-- The Math -->
+      <div class="mt-12 rounded-2xl border border-gray-200 bg-white p-8 dark:border-gray-700 dark:bg-gray-800">
+        <div class="grid gap-8 md:grid-cols-2">
+          <div>
+            <h3 class="text-lg font-bold text-gray-900 dark:text-white">De wiskunde</h3>
+            <ul class="mt-4 space-y-3 text-sm">
+              <li class="flex items-center gap-3 text-gray-600 dark:text-gray-300">
+                <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded bg-primary-100 text-xs font-bold text-primary-600 dark:bg-primary-900 dark:text-primary-400">1</span>
+                100 website bezoekers per maand (lokale SEO)
+              </li>
+              <li class="flex items-center gap-3 text-gray-600 dark:text-gray-300">
+                <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded bg-primary-100 text-xs font-bold text-primary-600 dark:bg-primary-900 dark:text-primary-400">2</span>
+                5% boekt een kennismaking = 5 leads
+              </li>
+              <li class="flex items-center gap-3 text-gray-600 dark:text-gray-300">
+                <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded bg-primary-100 text-xs font-bold text-primary-600 dark:bg-primary-900 dark:text-primary-400">3</span>
+                60% wordt klant = 3 nieuwe klanten
+              </li>
+              <li class="flex items-center gap-3 font-medium text-gray-900 dark:text-white">
+                <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded bg-green-100 text-xs font-bold text-green-600 dark:bg-green-900 dark:text-green-400">=</span>
+                3 klanten × €65/sessie × 4 sessies = <span class="text-green-600 dark:text-green-400">€780/maand extra</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-gray-900 dark:text-white">Waarom PT's dit missen</h3>
+            <p class="mt-4 text-sm text-gray-600 dark:text-gray-300">
+              Je bent opgeleid om te trainen, niet om te marketen. Dat is geen zwakte — dat is logisch.
+            </p>
+            <p class="mt-3 text-sm text-gray-600 dark:text-gray-300">
+              Maar zonder zichtbaarheid en een simpel boekingssysteem, verlies je elke maand klanten aan concurrenten die dit wél hebben.
+            </p>
+            <p class="mt-3 text-sm font-medium text-gray-900 dark:text-white">
+              Wij fixen de zichtbaarheid en het gemak. Jij doet waar je goed in bent.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guarantee Section -->
+  <section class="border-y border-green-200 bg-green-50 py-16 dark:border-green-900 dark:bg-green-900/20">
+    <div class="mx-auto max-w-3xl px-6 text-center">
+      <div class="inline-flex h-16 w-16 items-center justify-center rounded-full bg-green-100 dark:bg-green-900/50">
+        <svg class="h-8 w-8 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        </svg>
+      </div>
+      <h2 class="mt-6 text-2xl font-bold text-gray-900 dark:text-white sm:text-3xl">
+        {guarantee.headline}
+      </h2>
+      <p class="mt-4 text-lg text-gray-700 dark:text-gray-300">
+        {guarantee.description}
+      </p>
+      <p class="mt-6 text-sm font-medium text-green-700 dark:text-green-400">
+        Wij geloven zo sterk in dit systeem dat wij het risico dragen — niet jij.
+      </p>
+    </div>
+  </section>
+
+  <!-- How it Works -->
+  <section class="py-20">
+    <div class="mx-auto max-w-5xl px-6">
+      <div class="text-center">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white sm:text-3xl">
+          Hoe Je Van Start Gaat
+        </h2>
+        <p class="mt-4 text-gray-600 dark:text-gray-300">
+          Van eerste gesprek tot volgeboekte agenda. Simpel en snel.
+        </p>
+      </div>
+
+      <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        {steps.map((step, index) => (
+          <div class="relative">
+            <div class="flex h-12 w-12 items-center justify-center rounded-full bg-primary-600 text-lg font-bold text-white">
+              {index + 1}
+            </div>
+            <div class="mt-4">
+              <span class="inline-flex items-center rounded bg-gray-100 px-2 py-0.5 text-xs font-medium text-gray-600 dark:bg-gray-700 dark:text-gray-300">
+                {step.time}
+              </span>
+            </div>
+            <h3 class="mt-2 text-lg font-bold text-gray-900 dark:text-white">{step.title}</h3>
+            <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">{step.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Proof / Why Us -->
+  <section class="border-t border-gray-100 bg-gray-50 py-20 dark:border-gray-800 dark:bg-gray-900">
+    <div class="mx-auto max-w-5xl px-6">
+      <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
+        <div>
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white sm:text-3xl">
+            Waarom Personal Trainers in de Bollenstreek voor Ons Kiezen
+          </h2>
+          <ul class="mt-8 space-y-6">
+            {[
+              { title: "Lokaal & Persoonlijk", desc: "Geen anoniem bureau. Wij werken in Noordwijk, Lisse, Katwijk. Je kent ons, wij kennen de markt." },
+              { title: "Specifiek voor PT's", desc: "Geen generieke websites. Elk element is ontworpen voor wat personal trainers nodig hebben." },
+              { title: "Resultaat-gegarandeerd", desc: "De 5-Klanten-of-Gratis garantie. Wij verdienen pas als jij resultaat hebt." },
+              { title: "Jij Traint, Wij Bouwen", desc: "Geen cursussen die je zelf moet uitvoeren. Wij doen het werk, jij levert alleen basisinfo aan." },
+            ].map((item) => (
+              <li class="flex items-start gap-4">
+                <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900">
+                  <svg class="h-5 w-5 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-bold text-gray-900 dark:text-white">{item.title}</h3>
+                  <p class="mt-1 text-gray-600 dark:text-gray-400">{item.desc}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Testimonial Placeholder -->
+        <div class="rounded-2xl border-2 border-primary-200 bg-white p-8 dark:border-primary-800 dark:bg-gray-800">
+          <div class="flex gap-1">
+            {[...Array(5)].map(() => (
+              <svg class="h-6 w-6 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+          </div>
+          <blockquote class="mt-4 text-lg text-gray-700 dark:text-gray-300">
+            "Binnen 6 weken had ik mijn eerste 3 klanten via de nieuwe website. Inmiddels werk ik met een wachtlijst en kan ik eindelijk normale werkdagen draaien."
+          </blockquote>
+          <div class="mt-6 flex items-center gap-4">
+            <div class="h-12 w-12 rounded-full bg-gray-200 dark:bg-gray-600"></div>
+            <div>
+              <p class="font-bold text-gray-900 dark:text-white">Binnenkort: Jouw Naam Hier</p>
+              <p class="text-sm text-gray-500 dark:text-gray-400">Personal Trainer, Bollenstreek</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scarcity Reminder -->
+  <section class="py-12">
+    <div class="mx-auto max-w-3xl px-6 text-center">
+      <div class="rounded-2xl border-2 border-amber-300 bg-amber-50 p-8 dark:border-amber-700 dark:bg-amber-900/20">
+        <p class="text-sm font-bold uppercase tracking-wide text-amber-700 dark:text-amber-400">
+          Beperkte Beschikbaarheid
+        </p>
+        <p class="mt-2 text-xl font-bold text-gray-900 dark:text-white">
+          Nog {scarcity.spots} plekken deze maand
+        </p>
+        <p class="mt-2 text-gray-600 dark:text-gray-400">
+          {scarcity.reason}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Local Focus -->
+  <section class="border-t border-gray-100 bg-gray-50 py-16 dark:border-gray-800 dark:bg-gray-900">
+    <div class="mx-auto max-w-3xl px-6 text-center">
+      <h2 class="text-xl font-bold text-gray-900 dark:text-white">
+        Actief in de Duin- en Bollenstreek
+      </h2>
+      <div class="mt-6 flex flex-wrap justify-center gap-3">
+        {["Noordwijk", "Katwijk", "Lisse", "Hillegom", "Sassenheim", "Teylingen", "Voorhout", "Warmond", "Leiden"].map((town) => (
+          <span class="rounded-full border border-gray-200 bg-white px-4 py-2 text-sm text-gray-700 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-300">
+            {town}
+          </span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="relative overflow-hidden border-t border-primary-100 bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 py-20">
+    <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+      <div class="absolute -left-24 -top-24 h-64 w-64 rounded-full bg-white/10 blur-3xl"></div>
+      <div class="absolute -bottom-20 -right-20 h-72 w-72 rounded-full bg-white/10 blur-3xl"></div>
+    </div>
+
+    <div class="relative mx-auto max-w-3xl px-6 text-center">
+      <h2 class="text-2xl font-bold text-white sm:text-3xl">
+        Klaar om je business te transformeren?
+      </h2>
+      <p class="mx-auto mt-4 max-w-xl text-primary-100">
+        Plan je gratis strategiegesprek. In 30 minuten laten we zien hoeveel klanten je laat liggen — en hoe je dat oplost.
+      </p>
+      <a
+        href="/contact/"
+        class="mt-8 inline-flex items-center justify-center rounded-lg bg-white px-8 py-4 text-base font-bold text-primary-700 shadow-lg transition-all hover:-translate-y-0.5 hover:shadow-xl"
+      >
+        Claim Je Gratis Strategiegesprek
+        <svg class="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+      <p class="mt-4 text-sm text-primary-200">
+        Inclusief {guarantee.headline}
+      </p>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,128 @@
+---
+title: "E-mail instellingen: waarom SPF, DKIM en DMARC zo belangrijk zijn"
+description: "Veel ondernemers weten niet dat hun e-mails in spam terechtkomen door verkeerde instellingen. Ontdek waarom SPF, DKIM en DMARC cruciaal zijn voor je bedrijf."
+date: 2026-02-06
+author: "Wijnand Baretta"
+tags: ["e-mail", "techniek", "beveiliging", "MKB"]
+---
+
+Stel je voor: je stuurt een offerte naar een potentiële klant, maar die komt nooit aan. Of erger: iemand stuurt namens jouw bedrijf e-mails rond zonder dat je het weet. Dit gebeurt vaker dan je denkt, en het heeft allemaal te maken met drie afkortingen: **SPF, DKIM en DMARC**.
+
+## Het probleem: e-mail is van nature onveilig
+
+E-mail werd in de jaren '70 ontworpen toen internet nog een klein, vertrouwd netwerk was. Authenticatie? Niet nodig. Iedereen vertrouwde elkaar.
+
+Vandaag de dag is dat een probleem. Zonder extra beveiliging kan iedereen:
+- E-mails versturen die lijken te komen van jouw domein
+- Je bedrijfsnaam misbruiken voor phishing
+- Je reputatie beschadigen
+
+Daarom zijn SPF, DKIM en DMARC ontwikkeld: drie protocollen die samen je e-mail beveiligen.
+
+## SPF: wie mag namens jou versturen?
+
+**SPF** (Sender Policy Framework) is een lijst van servers die namens jouw domein e-mail mogen versturen.
+
+Denk aan een gastenlijst bij een exclusief feest. Alleen wie op de lijst staat, komt binnen. Voor e-mail werkt het hetzelfde: je publiceert een lijst van toegestane mailservers in je DNS-instellingen.
+
+**Wat gebeurt er zonder SPF?**
+- Spammers kunnen e-mails versturen die lijken te komen van @jouwbedrijf.nl
+- Je eigen e-mails kunnen als spam worden gemarkeerd
+- Grote mailproviders als Gmail en Outlook worden steeds strenger
+
+**Voorbeeld van een SPF-record:**
+```
+v=spf1 include:_spf.google.com ~all
+```
+
+Dit zegt: "Alleen Google's mailservers mogen e-mail versturen namens ons domein."
+
+## DKIM: de digitale handtekening
+
+**DKIM** (DomainKeys Identified Mail) voegt een digitale handtekening toe aan elke e-mail die je verstuurt.
+
+Het werkt als een lakzegel op een brief. De ontvanger kan controleren:
+1. Of de e-mail echt van jou komt
+2. Of de inhoud onderweg niet is aangepast
+
+DKIM gebruikt een publieke en privésleutel. Je privésleutel tekent de e-mail, je publieke sleutel (in DNS) laat ontvangers de handtekening verifiëren.
+
+**Wat gebeurt er zonder DKIM?**
+- Ontvangers kunnen niet verifiëren of de e-mail echt is
+- Je e-mails scoren lager bij spamfilters
+- Sommige ontvangers weigeren e-mail zonder DKIM
+
+## DMARC: het beleid
+
+**DMARC** (Domain-based Message Authentication, Reporting and Conformance) is het overkoepelende beleid. Het vertelt ontvangende servers wat ze moeten doen als SPF of DKIM faalt.
+
+Je hebt drie opties:
+
+| Beleid | Wat gebeurt er | Wanneer gebruiken |
+|--------|----------------|-------------------|
+| `none` | Niets, alleen rapporteren | Tijdens testen |
+| `quarantine` | Naar spam verplaatsen | Als je zeker bent van je instellingen |
+| `reject` | Volledig weigeren | Maximale bescherming |
+
+**Voorbeeld van een DMARC-record:**
+```
+v=DMARC1; p=quarantine; rua=mailto:dmarc@jouwbedrijf.nl
+```
+
+Dit zegt: "Als een e-mail de controle niet doorstaat, zet hem in spam. Stuur rapporten naar dit adres."
+
+## De gevolgen van verkeerde instellingen
+
+### Voor je dagelijkse werk
+- **Offertes komen niet aan** — ze belanden in spam bij de klant
+- **Nieuwsbrieven worden geblokkeerd** — Gmail en Outlook zijn streng
+- **Klanten missen je antwoorden** — frustratie en gemiste kansen
+
+### Voor je reputatie
+- **Phishing met jouw naam** — criminelen sturen nepfacturen
+- **Domeinreputatie daalt** — steeds meer e-mail wordt geblokkeerd
+- **Klanten verliezen vertrouwen** — "Ik kreeg een rare e-mail van jullie..."
+
+### Recente cijfers
+Sinds 2024 eisen Google en Yahoo dat bulkverzenders (meer dan 5.000 e-mails per dag) SPF, DKIM én DMARC correct hebben ingesteld. Maar ook voor kleinere verzenders tellen deze instellingen mee in de spamscore.
+
+## Hoe controleer je je eigen instellingen?
+
+Er zijn gratis tools om je e-mailinstellingen te checken:
+
+1. **MXToolbox** — [mxtoolbox.com](https://mxtoolbox.com)
+2. **Mail-tester** — [mail-tester.com](https://mail-tester.com)
+3. **Google Admin Toolbox** — voor Google Workspace-gebruikers
+
+Of vraag het ons. Wij kunnen binnen een paar minuten zien of je instellingen kloppen.
+
+## Wat moet je doen?
+
+### Stap 1: Controleer je huidige situatie
+Gebruik een van bovenstaande tools of vraag je hostingprovider.
+
+### Stap 2: Voeg de records toe
+Dit doe je in de DNS-instellingen van je domein (bij je hostingpartij of domeinregistrar). Je hebt nodig:
+- Een **SPF-record** (TXT)
+- Een **DKIM-record** (TXT) — vaak automatisch via je e-mailprovider
+- Een **DMARC-record** (TXT)
+
+### Stap 3: Test en monitor
+Begin met DMARC op `p=none` om te monitoren. Zodra alles werkt, schakel je over naar `quarantine` of `reject`.
+
+### Stap 4: Vraag hulp als nodig
+DNS-instellingen zijn technisch. Een fout kan ervoor zorgen dat al je e-mail stopt. Twijfel je? Vraag een professional.
+
+## Conclusie
+
+SPF, DKIM en DMARC zijn geen luxe meer — ze zijn noodzaak. Grote e-mailproviders worden steeds strenger en zonder deze instellingen loop je het risico dat:
+
+- Je e-mails niet aankomen
+- Criminelen jouw naam misbruiken
+- Je domeinreputatie permanent beschadigd raakt
+
+Het goede nieuws: de instellingen zijn eenmalig. Zodra ze correct staan, werken ze automatisch voor elke e-mail die je verstuurt.
+
+---
+
+**Wil je weten of jouw e-mailinstellingen op orde zijn?** Wij checken het gratis voor je. [Neem contact op](/contact) en binnen een dag weet je waar je staat.

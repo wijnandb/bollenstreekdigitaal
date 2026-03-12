@@ -1,0 +1,254 @@
+---
+import Base from "../../layouts/Base.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
+import CTA from "../../components/CTA.astro";
+
+const breadcrumbs = [
+  { label: "Home", href: "/" },
+  { label: "Kennis", href: "/kennis" },
+  { label: "E-mail beveiliging" },
+];
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "E-mail Beveiliging: SPF, DKIM en DMARC Uitgelegd",
+  "description": "Alles wat je moet weten over e-mailbeveiliging voor je bedrijf. Waarom SPF, DKIM en DMARC belangrijk zijn en hoe je ze instelt.",
+  "author": {
+    "@type": "Organization",
+    "name": "Bollenstreek Digitaal"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Bollenstreek Digitaal"
+  }
+};
+---
+
+<Base
+  title="E-mail Beveiliging: SPF, DKIM en DMARC | Bollenstreek Digitaal"
+  description="Waarom belanden je e-mails in spam? Ontdek hoe SPF, DKIM en DMARC je e-mail beveiligen en je bedrijfsreputatie beschermen."
+  jsonLd={structuredData}
+>
+  <Breadcrumb items={breadcrumbs} />
+
+  <article class="py-16">
+    <div class="mx-auto max-w-3xl px-6">
+
+      <!-- Header -->
+      <header class="mb-12 text-center">
+        <span class="inline-flex items-center gap-2 rounded-full bg-primary-100 px-3 py-1 text-xs font-semibold text-primary-700 dark:bg-primary-900/50 dark:text-primary-300">
+          Kennisbank
+        </span>
+        <h1 class="mt-4 text-4xl font-bold text-gray-900 dark:text-white">
+          E-mail Beveiliging
+        </h1>
+        <p class="mt-4 text-xl text-gray-600 dark:text-gray-300">
+          Waarom je e-mails in spam belanden en hoe je dat voorkomt
+        </p>
+      </header>
+
+      <!-- Quick Check -->
+      <div class="mb-12 rounded-2xl border-2 border-accent-400 bg-accent-50 p-6 dark:bg-accent-900/20">
+        <h2 class="flex items-center gap-2 text-lg font-bold text-gray-900 dark:text-white">
+          <svg class="h-5 w-5 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          Snelle check
+        </h2>
+        <p class="mt-2 text-gray-600 dark:text-gray-300">
+          Wil je weten of jouw e-mailinstellingen kloppen? Wij checken het gratis voor je.
+        </p>
+        <a href="/contact" class="mt-4 inline-flex items-center gap-2 rounded-lg bg-accent-500 px-4 py-2 font-semibold text-white hover:bg-accent-600">
+          Gratis check aanvragen
+          <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Content -->
+      <div class="prose prose-lg dark:prose-invert max-w-none">
+
+        <h2>Het probleem</h2>
+        <p>
+          E-mail werd ontworpen in de jaren '70, toen internet nog een klein, vertrouwd netwerk was.
+          Authenticatie was niet nodig — iedereen vertrouwde elkaar.
+        </p>
+        <p>
+          Vandaag is dat een probleem. Zonder extra beveiliging kan <strong>iedereen</strong>:
+        </p>
+        <ul>
+          <li>E-mails versturen die lijken te komen van jouw domein</li>
+          <li>Je bedrijfsnaam misbruiken voor phishing</li>
+          <li>Je reputatie beschadigen</li>
+        </ul>
+        <p>
+          Daarom zijn <strong>SPF, DKIM en DMARC</strong> ontwikkeld: drie protocollen die samen je e-mail beveiligen.
+        </p>
+
+        <hr />
+
+        <h2>De drie pijlers van e-mailbeveiliging</h2>
+
+        <h3>1. SPF — Wie mag versturen?</h3>
+        <p>
+          <strong>SPF</strong> (Sender Policy Framework) is een lijst van servers die namens jouw domein e-mail
+          mogen versturen. Denk aan een gastenlijst bij een exclusief feest.
+        </p>
+        <div class="rounded-lg bg-gray-100 p-4 dark:bg-gray-800">
+          <code class="text-sm">v=spf1 include:_spf.google.com ~all</code>
+          <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+            Dit zegt: "Alleen Google's servers mogen e-mail versturen namens ons."
+          </p>
+        </div>
+
+        <h3>2. DKIM — De digitale handtekening</h3>
+        <p>
+          <strong>DKIM</strong> (DomainKeys Identified Mail) voegt een digitale handtekening toe aan elke e-mail.
+          Het werkt als een lakzegel op een brief: de ontvanger kan controleren of de e-mail echt van jou komt
+          én of de inhoud niet is aangepast.
+        </p>
+
+        <h3>3. DMARC — Het beleid</h3>
+        <p>
+          <strong>DMARC</strong> vertelt ontvangende servers wat ze moeten doen als SPF of DKIM faalt.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Beleid</th>
+              <th>Actie</th>
+              <th>Gebruik</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>p=none</code></td>
+              <td>Niets, alleen monitoren</td>
+              <td>Tijdens testen</td>
+            </tr>
+            <tr>
+              <td><code>p=quarantine</code></td>
+              <td>Naar spam verplaatsen</td>
+              <td>Als instellingen werken</td>
+            </tr>
+            <tr>
+              <td><code>p=reject</code></td>
+              <td>Volledig weigeren</td>
+              <td>Maximale bescherming</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <hr />
+
+        <h2>De gevolgen van verkeerde instellingen</h2>
+
+        <h3>Voor je dagelijkse werk</h3>
+        <ul>
+          <li><strong>Offertes komen niet aan</strong> — ze belanden in spam</li>
+          <li><strong>Nieuwsbrieven worden geblokkeerd</strong> — Gmail en Outlook zijn streng</li>
+          <li><strong>Klanten missen je antwoorden</strong> — frustratie en gemiste kansen</li>
+        </ul>
+
+        <h3>Voor je reputatie</h3>
+        <ul>
+          <li><strong>Phishing met jouw naam</strong> — criminelen sturen nepfacturen</li>
+          <li><strong>Domeinreputatie daalt</strong> — steeds meer e-mail wordt geblokkeerd</li>
+          <li><strong>Vertrouwen verdwijnt</strong> — "Ik kreeg een rare e-mail van jullie..."</li>
+        </ul>
+
+        <div class="rounded-lg border-l-4 border-amber-500 bg-amber-50 p-4 dark:bg-amber-900/20">
+          <p class="font-semibold text-amber-800 dark:text-amber-200">Let op</p>
+          <p class="text-amber-700 dark:text-amber-300">
+            Sinds 2024 eisen Google en Yahoo dat verzenders SPF, DKIM én DMARC correct hebben ingesteld.
+            Zonder deze instellingen komen je e-mails steeds vaker niet aan.
+          </p>
+        </div>
+
+        <hr />
+
+        <h2>Wat moet je doen?</h2>
+
+        <ol>
+          <li>
+            <strong>Controleer je huidige situatie</strong><br />
+            Gebruik een gratis tool als <a href="https://mxtoolbox.com" target="_blank" rel="noopener">MXToolbox</a>
+            of vraag het ons.
+          </li>
+          <li>
+            <strong>Voeg de records toe</strong><br />
+            Dit doe je in de DNS-instellingen van je domein (bij je hostingpartij of domeinregistrar).
+          </li>
+          <li>
+            <strong>Test en monitor</strong><br />
+            Begin met DMARC op <code>p=none</code>. Schakel later over naar <code>quarantine</code> of <code>reject</code>.
+          </li>
+          <li>
+            <strong>Vraag hulp als nodig</strong><br />
+            DNS-instellingen zijn technisch. Een fout kan ervoor zorgen dat al je e-mail stopt.
+          </li>
+        </ol>
+
+        <hr />
+
+        <h2>Veelgestelde vragen</h2>
+
+        <h3>Hoe weet ik of mijn instellingen kloppen?</h3>
+        <p>
+          De eenvoudigste manier is een e-mail sturen naar een Gmail-adres en te kijken of hij aankomt.
+          Voor een volledige check kun je tools gebruiken als MXToolbox, of vraag het ons — we checken het gratis.
+        </p>
+
+        <h3>Wat als ik meerdere diensten gebruik voor e-mail?</h3>
+        <p>
+          Als je bijvoorbeeld Google Workspace voor zakelijke e-mail gebruikt én Mailchimp voor nieuwsbrieven,
+          moet je SPF-record beide services bevatten. We helpen je graag met de juiste configuratie.
+        </p>
+
+        <h3>Kan ik dit zelf doen?</h3>
+        <p>
+          Technisch gezien wel, maar DNS-instellingen zijn gevoelig. Een typefout kan ervoor zorgen dat
+          al je e-mail stopt met werken. Als je twijfelt, vraag dan een professional.
+        </p>
+
+        <h3>Hoe lang duurt het voordat instellingen werken?</h3>
+        <p>
+          DNS-wijzigingen kunnen tot 48 uur duren om wereldwijd door te voeren, maar meestal werken ze
+          binnen een paar uur.
+        </p>
+
+      </div>
+
+    </div>
+  </article>
+
+  <!-- Related content -->
+  <section class="border-t border-gray-100 bg-gray-50 py-16 dark:border-gray-800 dark:bg-gray-900/50">
+    <div class="mx-auto max-w-5xl px-6">
+      <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Meer lezen</h2>
+      <div class="mt-8 grid gap-6 md:grid-cols-2">
+        <a href="/blog/e-mail-instellingen-waarom-spf-dkim-dmarc-belangrijk-zijn" class="group rounded-xl border border-gray-200 bg-white p-6 transition hover:border-primary-300 hover:shadow-md dark:border-gray-700 dark:bg-gray-800">
+          <h3 class="font-semibold text-gray-900 group-hover:text-primary-600 dark:text-white">
+            E-mail instellingen: waarom SPF, DKIM en DMARC zo belangrijk zijn
+          </h3>
+          <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">
+            Diepgaande uitleg over e-mailbeveiliging met praktische voorbeelden.
+          </p>
+        </a>
+        <a href="/diensten/websites" class="group rounded-xl border border-gray-200 bg-white p-6 transition hover:border-primary-300 hover:shadow-md dark:border-gray-700 dark:bg-gray-800">
+          <h3 class="font-semibold text-gray-900 group-hover:text-primary-600 dark:text-white">
+            Website & E-mail Pakket
+          </h3>
+          <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">
+            Wij regelen je website én zorgen dat je e-mail goed is ingesteld.
+          </p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <CTA />
+</Base>

@@ -1,6 +1,7 @@
 ---
 import Base from "../../layouts/Base.astro";
 import BlogCard from "../../components/BlogCard.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
 import { getCollection } from "astro:content";
 
 const posts = (await getCollection("blog")).sort(
@@ -12,6 +13,11 @@ const posts = (await getCollection("blog")).sort(
   title="Blog"
   description="Artikelen over AI en digitale transformatie voor MKB-bedrijven in de Bollenstreek."
 >
+  <Breadcrumb items={[
+    { label: "Home", href: "/" },
+    { label: "Blog" },
+  ]} />
+
   <section class="py-20">
     <div class="mx-auto max-w-5xl px-6">
       <h1

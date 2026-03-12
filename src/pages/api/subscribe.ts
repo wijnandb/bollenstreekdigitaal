@@ -1,5 +1,8 @@
 import type { APIRoute } from "astro";
 import sgMail from "@sendgrid/mail";
+// TODO: CRM integration — uncomment when lib/crm is implemented
+// import { db } from "../../lib/crm/db";
+// import { contacts, deals, interactions } from "../../lib/crm/schema";
 
 const EMAILOCTOPUS_API_KEY = import.meta.env.EMAILOCTOPUS_API_KEY;
 const SENDGRID_API_KEY = import.meta.env.SENDGRID_API_KEY;
@@ -48,6 +51,19 @@ async function sendNotification(fields: {
   }
 }
 
+// TODO: CRM integration — implement when lib/crm is ready
+async function saveToCrm(_fields: {
+  email: string;
+  naam?: string;
+  bedrijfsnaam?: string;
+  telefoon?: string;
+  dienst?: string;
+  bericht?: string;
+}) {
+  // Placeholder — CRM integration not yet implemented
+  return;
+}
+
 export const POST: APIRoute = async ({ request }) => {
   try {
     const data = await request.json();
@@ -89,6 +105,9 @@ export const POST: APIRoute = async ({ request }) => {
 
     // Send email notification (fire-and-forget, don't block the response)
     sendNotification({ email, naam, bedrijfsnaam, telefoon, dienst, bericht });
+
+    // Write to CRM database (fire-and-forget)
+    saveToCrm({ email, naam, bedrijfsnaam, telefoon, dienst, bericht });
 
     if (!response.ok) {
       const error = await response.json().catch(() => ({}));

@@ -1,0 +1,184 @@
+---
+import Base from "../../layouts/Base.astro";
+import CTA from "../../components/CTA.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
+---
+
+<Base
+  title="AI Chatbot voor je website"
+  description="Een slimme chatbot die 24/7 vragen beantwoordt, afspraken inplant en klanten helpt. Getraind op jouw bedrijf, zonder dat jij iets hoeft te doen."
+>
+  <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Diensten", href: "/diensten/" }, { label: "Chatbot" }]} />
+
+  <section class="py-20">
+    <div class="mx-auto max-w-3xl px-6">
+      <h1
+        class="mt-4 text-4xl font-bold tracking-tight text-gray-900 dark:text-white"
+      >
+        AI Chatbot voor je website
+      </h1>
+      <p class="mt-4 text-lg text-gray-600 dark:text-gray-300">
+        Een digitale medewerker die 24/7 klaarstaat. Beantwoordt vragen, plant afspraken
+        en helpt klanten verder &mdash; ook als jij met je handen in de bloemen of de verf staat.
+      </p>
+
+      <div class="mt-12 space-y-10">
+        <div>
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
+            Het probleem
+          </h2>
+          <p class="mt-3 text-gray-600 dark:text-gray-300">
+            Je telefoon gaat. Weer dezelfde vraag: "Wat zijn jullie openingstijden?" of
+            "Kan ik woensdag langskomen?" Ondertussen sta je midden in een klus.
+          </p>
+          <p class="mt-3 text-gray-600 dark:text-gray-300">
+            Je kunt niet altijd opnemen. Klanten haken af. En 's avonds zit je WhatsApp-berichten
+            te beantwoorden terwijl je eigenlijk vrij bent.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
+            De oplossing
+          </h2>
+          <p class="mt-3 text-gray-600 dark:text-gray-300">
+            Een AI-chatbot op je website die direct antwoord geeft. Getraind op jouw diensten,
+            prijzen en veelgestelde vragen. Kan afspraken inplannen in je agenda. Werkt ook via WhatsApp.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
+            Wat de chatbot kan
+          </h2>
+          <ul class="mt-4 space-y-3">
+            <li class="flex items-start gap-3 text-gray-600 dark:text-gray-300">
+              <svg class="mt-1 h-5 w-5 shrink-0 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span><strong class="text-gray-900 dark:text-white">Vragen beantwoorden</strong> &mdash; Openingstijden, prijzen, diensten, locatie. Alles wat klanten willen weten.</span>
+            </li>
+            <li class="flex items-start gap-3 text-gray-600 dark:text-gray-300">
+              <svg class="mt-1 h-5 w-5 shrink-0 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span><strong class="text-gray-900 dark:text-white">Afspraken inplannen</strong> &mdash; Klant kiest een moment, afspraak komt direct in je agenda. Geen heen-en-weer gebel.</span>
+            </li>
+            <li class="flex items-start gap-3 text-gray-600 dark:text-gray-300">
+              <svg class="mt-1 h-5 w-5 shrink-0 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span><strong class="text-gray-900 dark:text-white">Leads verzamelen</strong> &mdash; Vraagt om contactgegevens als een klant meer wil weten. Jij krijgt een melding.</span>
+            </li>
+            <li class="flex items-start gap-3 text-gray-600 dark:text-gray-300">
+              <svg class="mt-1 h-5 w-5 shrink-0 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span><strong class="text-gray-900 dark:text-white">Doorschakelen</strong> &mdash; Complexe vragen? De chatbot geeft aan dat je terugbelt en stuurt je een notificatie.</span>
+            </li>
+            <li class="flex items-start gap-3 text-gray-600 dark:text-gray-300">
+              <svg class="mt-1 h-5 w-5 shrink-0 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span><strong class="text-gray-900 dark:text-white">WhatsApp ondersteuning</strong> &mdash; Dezelfde chatbot werkt ook via WhatsApp Business. Eén systeem, meerdere kanalen.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
+            Hoe het werkt
+          </h2>
+          <ol class="mt-4 space-y-4">
+            <li class="flex items-start gap-4 text-gray-600 dark:text-gray-300">
+              <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary-100 text-sm font-bold text-primary-600 dark:bg-primary-900 dark:text-primary-400">1</span>
+              <span><strong class="text-gray-900 dark:text-white">Intake</strong> &mdash; We verzamelen je veelgestelde vragen, diensten, prijzen en openingstijden. Duurt 30 minuten.</span>
+            </li>
+            <li class="flex items-start gap-4 text-gray-600 dark:text-gray-300">
+              <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary-100 text-sm font-bold text-primary-600 dark:bg-primary-900 dark:text-primary-400">2</span>
+              <span><strong class="text-gray-900 dark:text-white">Training</strong> &mdash; We trainen de chatbot op jouw bedrijf. Hij leert je tone-of-voice en kent je aanbod.</span>
+            </li>
+            <li class="flex items-start gap-4 text-gray-600 dark:text-gray-300">
+              <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary-100 text-sm font-bold text-primary-600 dark:bg-primary-900 dark:text-primary-400">3</span>
+              <span><strong class="text-gray-900 dark:text-white">Installatie</strong> &mdash; We plaatsen de chatbot op je website. Eén regel code, verder niets.</span>
+            </li>
+            <li class="flex items-start gap-4 text-gray-600 dark:text-gray-300">
+              <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary-100 text-sm font-bold text-primary-600 dark:bg-primary-900 dark:text-primary-400">4</span>
+              <span><strong class="text-gray-900 dark:text-white">Testen</strong> &mdash; Samen testen we of alles werkt. Je leert hoe je de gesprekken kunt volgen.</span>
+            </li>
+            <li class="flex items-start gap-4 text-gray-600 dark:text-gray-300">
+              <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary-100 text-sm font-bold text-primary-600 dark:bg-primary-900 dark:text-primary-400">5</span>
+              <span><strong class="text-gray-900 dark:text-white">Live</strong> &mdash; De chatbot gaat aan. Vanaf nu worden vragen automatisch beantwoord.</span>
+            </li>
+          </ol>
+        </div>
+
+        <div class="rounded-xl border border-gray-200 bg-gray-50 p-6 dark:border-gray-700 dark:bg-gray-800">
+          <h2 class="text-xl font-bold text-gray-900 dark:text-white">
+            Wat klanten zeggen
+          </h2>
+          <blockquote class="mt-4 text-gray-600 dark:text-gray-300 italic">
+            "Ik dacht: weer zo'n robot waar niemand mee wil praten. Maar klanten vinden het fijn.
+            En ik hoef 's avonds niet meer te appen."
+          </blockquote>
+          <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
+            &mdash; Schilder, Noordwijk
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
+            Veelgestelde vragen
+          </h2>
+          <dl class="mt-4 space-y-4">
+            <div>
+              <dt class="font-semibold text-gray-900 dark:text-white">Klinkt de chatbot als een robot?</dt>
+              <dd class="mt-1 text-gray-600 dark:text-gray-300">
+                Nee. We trainen hem op jouw manier van communiceren. Als jij informeel bent, is de chatbot dat ook.
+              </dd>
+            </div>
+            <div>
+              <dt class="font-semibold text-gray-900 dark:text-white">Wat als iemand iets vraagt dat de chatbot niet weet?</dt>
+              <dd class="mt-1 text-gray-600 dark:text-gray-300">
+                Dan geeft hij aan dat je terugbelt. Jij krijgt een melding met de vraag en contactgegevens.
+              </dd>
+            </div>
+            <div>
+              <dt class="font-semibold text-gray-900 dark:text-white">Moet ik iets technisch doen?</dt>
+              <dd class="mt-1 text-gray-600 dark:text-gray-300">
+                Nee. Wij regelen alles. Het enige wat jij doet is vertellen hoe je bedrijf werkt.
+              </dd>
+            </div>
+            <div>
+              <dt class="font-semibold text-gray-900 dark:text-white">Kan ik de chatbot aanpassen?</dt>
+              <dd class="mt-1 text-gray-600 dark:text-gray-300">
+                Ja. Als je diensten of prijzen veranderen, passen we de chatbot aan. Dat zit in het abonnement.
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-t border-gray-100 bg-gray-50 py-12 dark:border-gray-800 dark:bg-gray-900/50">
+    <div class="mx-auto max-w-3xl px-6 text-center">
+      <p class="text-gray-600 dark:text-gray-300">
+        Benieuwd wat een chatbot kost?
+      </p>
+      <a
+        href="/tarieven/chatbot/"
+        class="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-primary-600 transition-colors hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
+      >
+        Bekijk de tarieven
+        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+      </a>
+    </div>
+  </section>
+
+  <CTA
+    heading="Nooit meer dezelfde vraag beantwoorden?"
+    description="Laat je chatbot het werk doen. Plan een demo en zie hoe het werkt voor jouw bedrijf."
+    buttonText="Plan een demo"
+  />
+</Base>

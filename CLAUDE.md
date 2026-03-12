@@ -46,6 +46,7 @@ Trigger: "Laten we een blogpost schrijven" or just give a topic.
 - [x] Testimonials section removed (no real testimonials yet)
 - [x] Typewriter effect on homepage (cycles through local professions)
 - [x] Playwright test suite (39 tests, all passing)
+- [x] Business email setup (mailbox.org, wijnand@bollenstreekdigitaal.nl, 10/10 deliverability)
 
 ## Open / Future Items
 
@@ -55,6 +56,7 @@ Trigger: "Laten we een blogpost schrijven" or just give a topic.
 - [ ] Set up LinkedIn company page, then add link to website footer
 - [ ] Set up Google Business Profile (Google Places)
 - [ ] Record the Over Ons video (script ready in `docs/video-script-over-ons.md`)
+- [ ] Configure shared email aliases (info@, contact@, sales@) — add to Wijnand's mailbox.org, create forwarding rules to Pele
 
 ### Website Improvements
 - [ ] Add real testimonials when available (section is ready, just hidden)
@@ -93,5 +95,32 @@ Trigger: "Laten we een blogpost schrijven" or just give a topic.
 
 ---
 
-Uitbreidingen:
+## Tools & Services
+- **Boekhouding:** Jortt (invoicing, bookkeeping)
+- **E-mail:** mailbox.org (business email for bollenstreekdigitaal.nl)
+
+### Email Setup (bollenstreekdigitaal.nl)
+
+| Item | Status |
+|------|--------|
+| **Provider** | mailbox.org (Family Account, €6/month) |
+| **DNS** | Configured at Mijndomein.nl (MX, SPF, DKIM, DMARC) |
+| **Deliverability** | 10/10 mail-tester.com score |
+
+**Configured addresses:**
+- ✅ `wijnand@bollenstreekdigitaal.nl` — working
+- ⏳ `pele@bollenstreekdigitaal.nl` — Pele needs to add via mailbox.org Settings → E-mail Aliases
+
+**Shared aliases (pending):**
+- `info@bollenstreekdigitaal.nl`
+- `contact@bollenstreekdigitaal.nl`
+- `sales@bollenstreekdigitaal.nl`
+
+→ Add aliases to Wijnand's account, then create forwarding rules to Pele
+
+**IMAP/SMTP settings:**
+- Incoming: `imap.mailbox.org` (port 993, SSL)
+- Outgoing: `smtp.mailbox.org` (port 465, SSL)
+
+---
 
