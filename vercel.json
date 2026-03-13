@@ -1,11 +1,15 @@
 {
+  "rewrites": [
+    { "source": "/lv.js", "destination": "https://analytics.perceptum.nl/liveview.js?key=lv_live_hiSCJc7RqtMzLFxP7xz5-ytfd3RaUaB7" },
+    { "source": "/api/ingest", "destination": "https://analytics.perceptum.nl/api/ingest" }
+  ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://analytics.perceptum.nl https://chat.bollenstreekdigitaal.nl; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https: ; frame-ancestors 'none'"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://chat.bollenstreekdigitaal.nl; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:; frame-ancestors 'none'"
         },
         {
           "key": "X-Content-Type-Options",
