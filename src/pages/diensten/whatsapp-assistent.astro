@@ -1,0 +1,146 @@
+---
+import Base from "../../layouts/Base.astro";
+import CTA from "../../components/CTA.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
+
+const check = "M5 13l4 4L19 7";
+
+const kan = [
+  ["Vragen beantwoorden", "Openingstijden, prijzen, werkgebied, hoe het werkt. Volgens jouw regels: wat de assistent niet weet of niet mag beloven, zet hij door naar jou."],
+  ["Een klus uitvragen", "Foto's, adres, wat er moet gebeuren en hoe snel. Jij krijgt het in één bericht, klaar om een prijs te geven."],
+  ["Een afspraak voorstellen", "Een moment uit je agenda, of een terugbelmoment dat jij hebt vrijgehouden."],
+  ["Doorzetten naar jou", "Bij twijfel, of als de klant het vraagt. Jij krijgt een melding met het hele gesprek."],
+];
+
+const stappen = [
+  ["Kennismaken", "Twintig minuten: welke vragen krijg je, wat mag de assistent zeggen, wat niet, en wanneer wil je het zelf overnemen."],
+  ["Inrichten", "Wij koppelen je WhatsApp-nummer, zetten je antwoorden en regels erin en maken een paar voorbeeldgesprekken."],
+  ["Testen", "Je probeert het zelf, met echte vragen. Wat niet goed gaat, passen we aan."],
+  ["Live", "Meestal binnen twee weken. De eerste dagen lezen wij mee; daarna krijg je elke week een kort overzicht."],
+];
+
+const vragen = [
+  ["Moet ik een ander nummer nemen?", "Meestal niet. Gebruik je de WhatsApp Business-app al, dan kan de assistent op hetzelfde nummer meedraaien en houd jij je eigen app."],
+  ["Kan ik zelf nog appen met klanten?", "Ja. Typ je zelf in een gesprek, dan houdt de assistent zich daar een paar uur stil."],
+  ["Weten klanten dat ze met een assistent appen?", "Ja. Het eerste bericht zegt dat het een digitale assistent is. Dat is sinds augustus 2026 ook wettelijk verplicht."],
+  ["Wat kost WhatsApp zelf?", "Meta, het bedrijf achter WhatsApp, rekent sinds 1 oktober 2026 een paar cent per bericht dat een bedrijf verstuurt. Dat zit in de prijs, tot het aantal berichten in je pakket."],
+  ["Waar blijven de gegevens?", "De gesprekken worden verwerkt in de EU. Je krijgt van ons een verwerkersovereenkomst, en we sturen klanten geen reclame zonder hun toestemming."],
+  ["Wat mag de assistent niet?", "Algemene vragen beantwoorden die niets met je bedrijf te maken hebben, prijzen of data beloven die jij niet hebt vastgelegd, en advies geven waar een vakman of jurist voor nodig is."],
+];
+---
+<Base
+  title="WhatsApp-assistent voor je bedrijf"
+  description="Je klanten appen al. Een assistent op je eigen WhatsApp-nummer antwoordt binnen een minuut, ook 's avonds, vraagt een klus uit en zet het door naar jou. Je houdt je eigen app."
+>
+  <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Diensten", href: "/diensten/" }, { label: "WhatsApp-assistent" }]} />
+  <section class="py-20">
+    <div class="mx-auto max-w-3xl px-6">
+      <h1 class="mt-4 text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
+        WhatsApp-assistent voor je bedrijf
+      </h1>
+      <p class="mt-4 text-lg text-gray-600 dark:text-gray-300">
+        Je klanten appen al. De assistent antwoordt binnen een minuut, ook 's avonds en in het weekend,
+        vraagt uit wat je nodig hebt en zet het door naar jou. Jij houdt je eigen WhatsApp.
+      </p>
+
+      <div class="mt-12 space-y-10">
+        <div>
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Waarom</h2>
+          <p class="mt-3 text-gray-600 dark:text-gray-300">
+            Een klant stuurt om half negen 's avonds een foto van een rotte kozijnhoek. Jij ziet het de volgende
+            ochtend, op de steiger, en belt rond de middag terug. Dan heeft hij al met een ander afgesproken.
+          </p>
+          <p class="mt-3 text-gray-600 dark:text-gray-300">
+            Wie het eerst antwoordt, krijgt vaak de klus. Dat hoeft niet jij te zijn, als het antwoord maar klopt.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Zo ziet het eruit</h2>
+          <p class="mt-3 text-sm text-gray-500 dark:text-gray-400">Een voorbeeld, voor een timmerbedrijf in Noordwijk.</p>
+          <div class="mt-4 space-y-3 rounded-xl bg-[#efeae2] p-5 text-[15px] leading-snug dark:bg-gray-800">
+            <div class="max-w-[85%] rounded-lg bg-white px-4 py-2 text-gray-800 shadow-sm dark:bg-gray-700 dark:text-gray-100">
+              Hoi, de hoek van mijn kozijn is zacht geworden, zie foto. Kunnen jullie daarnaar kijken?
+              <span class="mt-1 block text-right text-xs text-gray-400">20:31</span>
+            </div>
+            <div class="ml-auto max-w-[85%] rounded-lg bg-[#d9fdd3] px-4 py-2 text-gray-800 shadow-sm dark:bg-emerald-900 dark:text-gray-100">
+              Goedenavond, je appt met de digitale assistent van het timmerbedrijf. Op de foto lijkt het houtrot
+              onderin het kozijn. Dat repareren we vaak zonder het hele kozijn te vervangen. Waar staat het
+              (straat en plaats), en is het een raam of een deur?
+              <span class="mt-1 block text-right text-xs text-gray-400">20:31</span>
+            </div>
+            <div class="max-w-[85%] rounded-lg bg-white px-4 py-2 text-gray-800 shadow-sm dark:bg-gray-700 dark:text-gray-100">
+              Raam aan de achterkant, Zeestraat in Noordwijk.
+              <span class="mt-1 block text-right text-xs text-gray-400">20:33</span>
+            </div>
+            <div class="ml-auto max-w-[85%] rounded-lg bg-[#d9fdd3] px-4 py-2 text-gray-800 shadow-sm dark:bg-emerald-900 dark:text-gray-100">
+              Dank je. Dan komen we eerst kijken; dat kost niets. Past dinsdagochtend tussen 8 en 10 uur, of
+              donderdagmiddag? Een prijs krijg je na het bezoek.
+              <span class="mt-1 block text-right text-xs text-gray-400">20:33</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Wat de assistent doet</h2>
+          <ul class="mt-4 space-y-3">
+            {kan.map(([titel, tekst]) => (
+              <li class="flex items-start gap-3 text-gray-600 dark:text-gray-300">
+                <svg class="mt-1 h-5 w-5 shrink-0 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={check} />
+                </svg>
+                <span><strong class="text-gray-900 dark:text-white">{titel}.</strong> {tekst}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Zo werkt het</h2>
+          <ol class="mt-4 space-y-4">
+            {stappen.map(([titel, tekst], i) => (
+              <li class="flex items-start gap-4 text-gray-600 dark:text-gray-300">
+                <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary-100 text-sm font-bold text-primary-600 dark:bg-primary-900 dark:text-primary-400">{i + 1}</span>
+                <span><strong class="text-gray-900 dark:text-white">{titel}.</strong> {tekst}</span>
+              </li>
+            ))}
+          </ol>
+          <p class="mt-4 text-sm text-gray-500 dark:text-gray-400">
+            WhatsApp vraagt soms om een controle van je bedrijfsgegevens. Duurt die langer, dan starten we binnen de grenzen die WhatsApp dan stelt.
+          </p>
+        </div>
+
+        <div class="rounded-xl border border-gray-200 bg-gray-50 p-6 dark:border-gray-700 dark:bg-gray-800">
+          <h2 class="text-xl font-bold text-gray-900 dark:text-white">Wat het kost</h2>
+          <p class="mt-3 text-gray-900 dark:text-white">
+            <span class="text-3xl font-bold">&euro;129</span> per maand, excl. btw, maandelijks opzegbaar.
+          </p>
+          <ul class="mt-3 space-y-1 text-gray-600 dark:text-gray-300">
+            <li>Eenmalig &euro;450 voor het inrichten.</li>
+            <li>Inclusief 1.000 berichten van de assistent per maand, en de kosten van WhatsApp daarvoor.</li>
+            <li>Daarboven &euro;0,10 per bericht. Gaat dat vaker gebeuren, dan bellen we eerst.</li>
+            <li>Aanpassingen aan antwoorden, prijzen en regels zitten erin.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Veelgestelde vragen</h2>
+          <dl class="mt-4 space-y-4">
+            {vragen.map(([v, a]) => (
+              <div>
+                <dt class="font-semibold text-gray-900 dark:text-white">{v}</dt>
+                <dd class="mt-1 text-gray-600 dark:text-gray-300">{a}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    heading="Zie eerst hoe het voor jouw bedrijf werkt"
+    description="Stuur ons de vijf vragen die je het vaakst krijgt. Binnen twee werkdagen krijg je een voorbeeldgesprek met jouw antwoorden, in jouw toon. Daarna beslis je."
+    buttonText="Vraag een voorbeeld aan"
+  />
+</Base>
